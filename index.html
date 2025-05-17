@@ -8,79 +8,109 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       background-color: #f4f7fb;
+      color: #333;
     }
     header {
       background-color: #003366;
+      padding: 20px 40px;
       color: white;
-      padding: 20px;
-      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 22px;
     }
     nav a {
       color: white;
-      margin: 0 15px;
+      margin-left: 20px;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
     }
-    .welcome-section {
-      background-color: #eaf0f6;
+    .hero {
+      background: url('images/bg-welcome.png') center/cover no-repeat;
+      padding: 100px 20px;
       text-align: center;
-      padding: 60px 20px;
+      color: white;
+      position: relative;
     }
-    .welcome-section h2 {
-      font-size: 28px;
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 51, 102, 0.65);
+      z-index: 0;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    .hero h2 {
+      font-size: 36px;
       margin-bottom: 10px;
     }
-    .welcome-section p {
+    .hero p {
       font-size: 18px;
-      margin-bottom: 40px;
-      color: #333;
+      max-width: 600px;
+      margin: 0 auto 30px;
     }
-    .cards {
+    .cta {
+      background: white;
+      margin-top: -40px;
+      padding: 40px 20px;
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
       gap: 20px;
-    }
-    .card {
-      background-color: white;
+      justify-content: center;
       border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
+    .cta-card {
+      background: #f9fbfd;
+      border-radius: 10px;
       padding: 30px;
       width: 280px;
       text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
-    .card h3 {
-      font-size: 20px;
+    .cta-card h3 {
       color: #003366;
+      margin-bottom: 10px;
     }
-    .card p {
-      color: #555;
-      font-size: 16px;
+    .cta-card p {
+      font-size: 15px;
+      color: #444;
     }
-    .card button {
+    .cta-card button {
       margin-top: 15px;
-      padding: 10px 20px;
-      border: none;
-      background-color: #003366;
+      background: #003366;
       color: white;
+      border: none;
+      padding: 10px 20px;
       border-radius: 5px;
       cursor: pointer;
     }
-    .card button:hover {
-      background-color: #0059b3;
+    .cta-card button:hover {
+      background: #0059b3;
     }
     footer {
-      background-color: #003366;
+      background: #003366;
       color: white;
       text-align: center;
       padding: 20px;
       margin-top: 40px;
     }
+    footer a {
+      color: #aad8ff;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
+
   <header>
     <h1>VendorConnect EG</h1>
     <nav>
@@ -92,31 +122,35 @@
     </nav>
   </header>
 
-  <section class="welcome-section">
-    <h2>Empowering the Oil & Gas Supply Chain in Equatorial Guinea</h2>
-    <p>VendorConnect EG offers a digital gateway for all stakeholders in the energy sector to connect, register, and grow.</p>
-    
-    <div class="cards">
-      <div class="card">
-        <h3>For Vendors</h3>
-        <p>Register to offer your services and renew your MMH license easily online.</p>
-        <button onclick="location.href='renewal.html'">Register Now</button>
-      </div>
-      <div class="card">
-        <h3>For IOCs</h3>
-        <p>Find pre-vetted, compliant local suppliers to support your operations.</p>
-        <button onclick="location.href='vendors.html'">Explore Directory</button>
-      </div>
-      <div class="card">
-        <h3>For MMH / Regulators</h3>
-        <p>Track registrations, compliance history, and sector-wide performance in real-time.</p>
-        <button onclick="location.href='dashboard.html'">Access Dashboard</button>
-      </div>
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Empowering Local Content in EG's Oil & Gas Sector</h2>
+      <p>The official digital portal for vendor registration, tender access, and compliance visibility.</p>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="cta-card">
+      <h3>For Vendors</h3>
+      <p>Register and manage your MMH license, stay compliant and get visibility across the sector.</p>
+      <button onclick="location.href='renewal.html'">Register Now</button>
+    </div>
+    <div class="cta-card">
+      <h3>For IOCs</h3>
+      <p>Discover qualified vendors, track compliance, and enhance your procurement workflows.</p>
+      <button onclick="location.href='vendors.html'">Browse Vendors</button>
+    </div>
+    <div class="cta-card">
+      <h3>For Regulators</h3>
+      <p>Monitor license renewals, access vendor reports, and drive local content strategy.</p>
+      <button onclick="location.href='dashboard.html'">Access Dashboard</button>
     </div>
   </section>
 
   <footer>
-    <p>Global Supply S.L. | info@globalsupplyeg.com | +240 222 527 519</p>
+    <p>© VendorConnect EG | Global Supply S.L. | info@globalsupplyeg.com | +240 222 527 519</p>
+    <p><a href="https://github.com/vendorconnect-demo/vendorconnect" target="_blank">View GitHub Repository</a></p>
   </footer>
+
 </body>
 </html>
