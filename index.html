@@ -5,21 +5,118 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VendorConnect EG</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f7fb;
+    }
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .welcome-section {
+      background-color: #eaf0f6;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .welcome-section h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    .welcome-section p {
+      font-size: 18px;
+      margin-bottom: 40px;
+      color: #333;
+    }
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 30px;
+      width: 280px;
+      text-align: center;
+    }
+    .card h3 {
+      font-size: 20px;
+      color: #003366;
+    }
+    .card p {
+      color: #555;
+      font-size: 16px;
+    }
+    .card button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border: none;
+      background-color: #003366;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .card button:hover {
+      background-color: #0059b3;
+    }
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
   <header>
     <h1>VendorConnect EG</h1>
     <nav>
       <a href="index.html">Home</a>
-      <a href="index-es.html">Español</a>
+      <a href="vendors.html">Vendors</a>
+      <a href="tenders.html">Tenders</a>
+      <a href="renewal.html">Register/Renew</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
-  <section>
-    <h2>Welcome to VendorConnect EG</h2>
-    <p>The official digital portal for oil & gas vendors in Equatorial Guinea.</p>
+
+  <section class="welcome-section">
+    <h2>Empowering the Oil & Gas Supply Chain in Equatorial Guinea</h2>
+    <p>VendorConnect EG offers a digital gateway for all stakeholders in the energy sector to connect, register, and grow.</p>
+    
+    <div class="cards">
+      <div class="card">
+        <h3>For Vendors</h3>
+        <p>Register to offer your services and renew your MMH license easily online.</p>
+        <button onclick="location.href='renewal.html'">Register Now</button>
+      </div>
+      <div class="card">
+        <h3>For IOCs</h3>
+        <p>Find pre-vetted, compliant local suppliers to support your operations.</p>
+        <button onclick="location.href='vendors.html'">Explore Directory</button>
+      </div>
+      <div class="card">
+        <h3>For MMH / Regulators</h3>
+        <p>Track registrations, compliance history, and sector-wide performance in real-time.</p>
+        <button onclick="location.href='dashboard.html'">Access Dashboard</button>
+      </div>
+    </div>
   </section>
+
   <footer>
-    <p>Global Supply S.L. | Malabo, Equatorial Guinea</p>
+    <p>Global Supply S.L. | info@globalsupplyeg.com | +240 222 527 519</p>
   </footer>
 </body>
 </html>
