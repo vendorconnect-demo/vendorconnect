@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vendor Directory - Preview</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f7fb;
+      padding: 40px;
+      margin: 0;
+    }
+    h2 {
+      color: #003366;
+      text-align: center;
+    }
+    .vendor-grid {
+      max-width: 900px;
+      margin: 30px auto;
+      display: grid;
+      gap: 20px;
+    }
+    .vendor-card {
+      background: white;
+      border-left: 6px solid #003366;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .vendor-card h4 {
+      margin: 0 0 5px;
+      color: #003366;
+    }
+    .vendor-card p {
+      margin: 0;
+      color: #555;
+    }
+    .more-info {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+    .more-info a {
+      color: #003366;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+    .cta-message {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .cta-message p {
+      font-size: 16px;
+      color: #333;
+    }
+    .cta-message a {
+      display: inline-block;
+      margin-top: 10px;
+      background: #003366;
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+    .cta-message a:hover {
+      background: #0059b3;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Registered Vendors (Preview)</h2>
+
+  <div class="vendor-grid">
+    <div class="vendor-card">
+      <h4>EquaLogistics S.A.</h4>
+      <p>Logistics & Transportation</p>
+      <div class="more-info"><a href="signin.html">Sign in to see more</a></div>
+    </div>
+    <div class="vendor-card">
+      <h4>EG PowerTech</h4>
+      <p>Electrical & Engineering Services</p>
+      <div class="more-info"><a href="signin.html">Sign in to see more</a></div>
+    </div>
+    <div class="vendor-card">
+      <h4>Malabo Catering Solutions</h4>
+      <p>Catering & Hospitality</p>
+      <div class="more-info"><a href="signin.html">Sign in to see more</a></div>
+    </div>
+  </div>
+
+  <div class="cta-message">
+    <p>Only registered users can access detailed vendor information.</p>
+    <a href="signup.html">Create an Account</a>
+  </div>
+
+</body>
+</html>
