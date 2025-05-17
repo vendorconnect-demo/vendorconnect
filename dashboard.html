@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regulatory Dashboard - VendorConnect EG</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f7fb;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #003366;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-left: 6px solid #003366;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .card h2 {
+      color: #003366;
+      margin-top: 0;
+    }
+    .metrics {
+      font-size: 32px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    .filter-section {
+      background: white;
+      padding: 20px;
+      margin-top: 40px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    label {
+      font-weight: bold;
+    }
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    table {
+      width: 100%;
+      margin-top: 30px;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #ccc;
+      text-align: left;
+    }
+    th {
+      background-color: #003366;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Regulatory Dashboard</h1>
+
+  <div class="grid">
+    <div class="card">
+      <h2>Active Vendors</h2>
+      <div class="metrics">128</div>
+    </div>
+    <div class="card">
+      <h2>Pending Renewals</h2>
+      <div class="metrics">34</div>
+    </div>
+    <div class="card">
+      <h2>Non-Compliant Vendors</h2>
+      <div class="metrics">7</div>
+    </div>
+    <div class="card">
+      <h2>Reports Downloaded</h2>
+      <div class="metrics">86</div>
+    </div>
+  </div>
+
+  <div class="filter-section">
+    <h2>Search Vendor Compliance</h2>
+    <label for="category">Select Category</label>
+    <select id="category">
+      <option value="all">All</option>
+      <option value="logistics">Logistics & Transport</option>
+      <option value="catering">Catering & Hospitality</option>
+      <option value="engineering">Engineering</option>
+      <option value="marine">Marine Services</option>
+    </select>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Vendor Name</th>
+        <th>Category</th>
+        <th>License Status</th>
+        <th>Renewal Due</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>EquaLogistics S.A.</td>
+        <td>Logistics & Transport</td>
+        <td>Active</td>
+        <td>2026-03-01</td>
+      </tr>
+      <tr>
+        <td>EG PowerTech</td>
+        <td>Engineering</td>
+        <td>Pending</td>
+        <td>2025-06-30</td>
+      </tr>
+      <tr>
+        <td>BioLab EG</td>
+        <td>HSE & Labs</td>
+        <td>Non-Compliant</td>
+        <td>2024-12-15</td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>
