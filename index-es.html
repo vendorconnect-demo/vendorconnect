@@ -104,18 +104,33 @@
     }
     .carousel h2 {
       color: #003366;
+      margin-bottom: 20px;
     }
-    .carousel-slide {
+    .carousel-container {
+      overflow: hidden;
+      max-width: 100%;
+      position: relative;
+    }
+    .carousel-track {
       display: flex;
-      overflow-x: auto;
-      gap: 20px;
-      margin-top: 20px;
+      width: 400%;
+      animation: scrollCarousel 12s infinite linear;
     }
-    .carousel-slide img {
-      width: 300px;
-      height: 180px;
+    .carousel-track img {
+      width: 100%;
+      max-width: 100vw;
+      height: 300px;
       object-fit: cover;
       border-radius: 8px;
+    }
+    @keyframes scrollCarousel {
+      0%   { transform: translateX(0%); }
+      25%  { transform: translateX(0%); }
+      33%  { transform: translateX(-100%); }
+      58%  { transform: translateX(-100%); }
+      66%  { transform: translateX(-200%); }
+      91%  { transform: translateX(-200%); }
+      100% { transform: translateX(-300%); }
     }
     footer {
       background: #003366;
@@ -130,7 +145,7 @@
   <header>
     <h1>VendorConnect EG</h1>
     <nav>
-      <a href="signin.html">Iniciar sesión</a>
+      <a href="signin.html">Iniciar Sesión</a>
       <a href="signup.html">Registrarse</a>
       <a href="index.html">EN</a>
     </nav>
@@ -138,43 +153,45 @@
 
   <section class="hero">
     <div class="hero-content">
-      <h2>Conectando la cadena de suministro del sector de petróleo y gas en Guinea Ecuatorial</h2>
-      <p>Plataforma digital oficial para registro de proveedores, licitaciones, renovación de licencias y seguimiento de cumplimiento.</p>
-      <button onclick="location.href='signup.html'">Registrar proveedor</button>
-      <button onclick="location.href='signin.html'">Acceso a la plataforma</button>
+      <h2>Conectando la Cadena de Suministro del Sector de Petróleo y Gas en Guinea Ecuatorial</h2>
+      <p>La plataforma digital oficial para el registro de proveedores, licitaciones, renovación de licencias y seguimiento del cumplimiento.</p>
+      <button onclick="location.href='signup.html'">Registrar como Proveedor</button>
+      <button onclick="location.href='signin.html'">Acceso de Usuarios</button>
     </div>
   </section>
 
   <section class="dashboard">
     <div class="tile">
       <h3>Ver Proveedores Registrados</h3>
-      <p>Acceda a los perfiles organizados por servicio y estado de cumplimiento.</p>
+      <p>Acceda a perfiles de proveedores organizados por servicio y estado de cumplimiento.</p>
       <button onclick="location.href='vendors-preview.html'">Explorar</button>
     </div>
     <div class="tile">
       <h3>Ver Oportunidades de Licitación</h3>
-      <p>Consulte las licitaciones activas y envíe su expresión de interés.</p>
+      <p>Explore licitaciones activas y presente su interés de forma segura.</p>
       <button onclick="location.href='tenders.html'">Licitaciones</button>
     </div>
     <div class="tile">
       <h3>Renovar Licencia</h3>
-      <p>Suba documentos y haga seguimiento de su solicitud de renovación ante el MMH.</p>
+      <p>Suba documentos para renovar su licencia del MMH y consulte el estado de su aprobación.</p>
       <button onclick="location.href='license-renewal.html'">Renovar</button>
     </div>
     <div class="tile">
       <h3>Contacto y Soporte</h3>
-      <p>¿Necesita ayuda? Escríbanos o solicite asistencia personalizada.</p>
+      <p>¿Necesita ayuda? Contacte con nuestro equipo o solicite asistencia.</p>
       <button onclick="location.href='contact.html'">Contáctenos</button>
     </div>
   </section>
 
   <section class="carousel">
     <h2>Actualizaciones del Sector</h2>
-    <div class="carousel-slide">
-      <img src="images/update1.png" alt="Actualización 1">
-      <img src="images/update2.png" alt="Actualización 2">
-      <img src="images/update3.png" alt="Actualización 3">
-      <img src="images/update4.png" alt="Actualización 4">
+    <div class="carousel-container">
+      <div class="carousel-track">
+        <img src="images/update1.png" alt="Actualización 1">
+        <img src="images/update2.png" alt="Actualización 2">
+        <img src="images/update3.png" alt="Actualización 3">
+        <img src="images/update4.png" alt="Actualización 4">
+      </div>
     </div>
   </section>
 
