@@ -1,32 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sign Up - VendorConnect EG</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register Your Company</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f4f7fb;
-      margin: 0;
-      padding: 40px 20px;
-    }
-    .container {
-      background-color: #fff;
-      max-width: 600px;
-      margin: auto;
+      background: #f7f9fb;
       padding: 40px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-    h2 {
-      text-align: center;
+    h1 {
       color: #003366;
+      text-align: center;
+    }
+    form {
+      background: #fff;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
     label {
-      font-weight: bold;
       display: block;
-      margin-top: 20px;
+      margin-top: 15px;
+      font-weight: bold;
     }
     input, select, textarea {
       width: 100%;
@@ -34,62 +33,86 @@
       margin-top: 5px;
       border: 1px solid #ccc;
       border-radius: 4px;
-      resize: vertical;
+    }
+    .hidden {
+      display: none;
     }
     button {
-      margin-top: 30px;
-      width: 100%;
       background-color: #003366;
       color: white;
       border: none;
-      padding: 14px;
-      font-size: 16px;
-      font-weight: bold;
-      border-radius: 6px;
+      padding: 12px 20px;
+      margin-top: 20px;
+      border-radius: 5px;
       cursor: pointer;
     }
     button:hover {
-      background-color: #0059b3;
+      background-color: #00509e;
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <h2>Register Your Company</h2>
-    <form>
-      <label for="company">Company Name</label>
-      <input type="text" id="company" required />
+<h1>Register Your Company</h1>
+<form>
+  <label for="company">Company Name:</label>
+  <input type="text" id="company" name="company" required>
 
-      <label for="email">Company Email</label>
-      <input type="email" id="email" required />
+  <label for="nif">NIF (Tax ID):</label>
+  <input type="text" id="nif" name="nif" required>
 
-      <label for="phone">Phone Number</label>
-      <input type="tel" id="phone" required />
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required>
 
-      <label for="category">Service Category</label>
-      <select id="category" required>
-        <option value="">-- Select Category --</option>
-        <option>Logistics & Transportation</option>
-        <option>Engineering</option>
-        <option>Catering & Hospitality</option>
-        <option>Marine Services</option>
-        <option>IT & Telecom</option>
-        <option>Other</option>
-      </select>
+  <label for="category">Business Category:</label>
+  <select id="category" name="category" required>
+    <option value="">-- Select --</option>
+    <option value="logistics">Logistics</option>
+    <option value="catering">Catering</option>
+    <option value="construction">Construction</option>
+    <option value="engineering">Engineering</option>
+  </select>
 
-      <label for="location">Headquarters Location</label>
-      <input type="text" id="location" required />
+  <label for="payment">Payment Method:</label>
+  <select id="payment" name="payment" required onchange="togglePayment(this.value)">
+    <option value="">-- Choose Method --</option>
+    <option value="bank">Bank Transfer</option>
+    <option value="card">Credit/Debit Card</option>
+  </select>
 
-      <label for="description">Company Description</label>
-      <textarea id="description" rows="4"></textarea>
-
-      <label for="password">Set a Password</label>
-      <input type="password" id="password" required />
-
-      <button type="submit" onclick="alert('Registration submitted successfully!')">Submit Registration</button>
-    </form>
+  <div id="bank-fields" class="hidden">
+    <label for="bank-slip">Upload Proof of Payment:</label>
+    <input type="file" id="bank-slip" name="bank-slip" accept="image/*,application/pdf">
   </div>
+
+  <div id="card-fields" class="hidden">
+    <label for="card-name">Cardholder Name:</label>
+    <input type="text" id="card-name" name="card-name">
+
+    <label for="card-number">Card Number:</label>
+    <input type="text" id="card-number" name="card-number" maxlength="16">
+
+    <label for="expiry">Expiry Date (MM/YY):</label>
+    <input type="text" id="expiry" name="expiry" placeholder="MM/YY">
+
+    <label for="cvc">CVC:</label>
+    <input type="text" id="cvc" name="cvc" maxlength="4">
+  </div>
+
+  <button type="submit">Submit Registration</button>
+</form>
+
+<script>
+function togglePayment(method) {
+  document.getElementById('bank-fields').classList.add('hidden');
+  document.getElementById('card-fields').classList.add('hidden');
+  if (method === 'bank') {
+    document.getElementById('bank-fields').classList.remove('hidden');
+  } else if (method === 'card') {
+    document.getElementById('card-fields').classList.remove('hidden');
+  }
+}
+</script>
 
 </body>
 </html>
