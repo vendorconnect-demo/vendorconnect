@@ -97,43 +97,32 @@
       border-radius: 4px;
       cursor: pointer;
     }
+
     .carousel {
       background: #eaeef3;
       padding: 40px 20px;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+      height: 300px;
     }
     .carousel h2 {
       color: #003366;
       margin-bottom: 20px;
     }
-    .carousel-container {
-      overflow: hidden;
-      max-width: 100%;
-      position: relative;
-    }
-    .carousel-track {
-      display: flex;
-      width: 400%;
-      animation: scrollCarousel 24s infinite linear;
-    }
-    .carousel-track img {
+    .carousel img {
+      position: absolute;
       width: 100%;
-      max-width: 100vw;
       height: 300px;
       object-fit: cover;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
       border-radius: 8px;
     }
-    @keyframes scrollCarousel {
-      0%   { transform: translateX(0%); }
-      20%  { transform: translateX(0%); }
-      25%  { transform: translateX(-100%); }
-      45%  { transform: translateX(-100%); }
-      50%  { transform: translateX(-200%); }
-      70%  { transform: translateX(-200%); }
-      75%  { transform: translateX(-300%); }
-      95%  { transform: translateX(-300%); }
-      100% { transform: translateX(0%); }
+    .carousel img.active {
+      opacity: 1;
     }
+
     footer {
       background: #003366;
       color: white;
@@ -144,62 +133,69 @@
 </head>
 <body>
 
-  <header>
-    <h1>VendorConnect EG</h1>
-    <nav>
-      <a href="signin.html">Sign In</a>
-      <a href="signup.html">Sign Up</a>
-      <a href="index-es.html">ES</a>
-    </nav>
-  </header>
+<header>
+  <h1>VendorConnect EG</h1>
+  <nav>
+    <a href="signin.html">Sign In</a>
+    <a href="signup.html">Sign Up</a>
+    <a href="index-es.html">ES</a>
+  </nav>
+</header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h2>Connecting Supply Chains Across Equatorial Guinea’s Oil & Gas Sector</h2>
-      <p>The official digital platform for vendor registration, tenders, license renewal and compliance monitoring.</p>
-      <button onclick="location.href='signup.html'">Register as Vendor</button>
-      <button onclick="location.href='signin.html'">Stakeholder Login</button>
-    </div>
-  </section>
+<section class="hero">
+  <div class="hero-content">
+    <h2>Connecting Supply Chains Across Equatorial Guinea’s Oil & Gas Sector</h2>
+    <p>The official digital platform for vendor registration, tenders, license renewal and compliance monitoring.</p>
+    <button onclick="location.href='signup.html'">Register as Vendor</button>
+    <button onclick="location.href='signin.html'">Stakeholder Login</button>
+  </div>
+</section>
 
-  <section class="dashboard">
-    <div class="tile">
-      <h3>View Registered Vendors</h3>
-      <p>Access vendor profiles categorized by service and compliance status.</p>
-      <button onclick="location.href='vendors-preview.html'">Browse</button>
-    </div>
-    <div class="tile">
-      <h3>Browse Tender Opportunities</h3>
-      <p>Explore open RFQs and submit your interest securely.</p>
-      <button onclick="location.href='tenders.html'">Tenders</button>
-    </div>
-    <div class="tile">
-      <h3>Submit License Renewal</h3>
-      <p>Upload documents for your MMH license update and check approval status.</p>
-      <button onclick="location.href='license-renewal.html'">Renew</button>
-    </div>
-    <div class="tile">
-      <h3>Contact Support</h3>
-      <p>Need help? Get in touch with our team or request assistance.</p>
-      <button onclick="location.href='contact.html'">Contact Us</button>
-    </div>
-  </section>
+<section class="dashboard">
+  <div class="tile">
+    <h3>View Registered Vendors</h3>
+    <p>Access vendor profiles categorized by service and compliance status.</p>
+    <button onclick="location.href='vendors-preview.html'">Browse</button>
+  </div>
+  <div class="tile">
+    <h3>Browse Tender Opportunities</h3>
+    <p>Explore open RFQs and submit your interest securely.</p>
+    <button onclick="location.href='tenders.html'">Tenders</button>
+  </div>
+  <div class="tile">
+    <h3>Submit License Renewal</h3>
+    <p>Upload documents for your MMH license update and check approval status.</p>
+    <button onclick="location.href='license-renewal.html'">Renew</button>
+  </div>
+  <div class="tile">
+    <h3>Contact Support</h3>
+    <p>Need help? Get in touch with our team or request assistance.</p>
+    <button onclick="location.href='contact.html'">Contact Us</button>
+  </div>
+</section>
 
-  <section class="carousel">
-    <h2>Industry Updates</h2>
-    <div class="carousel-container">
-      <div class="carousel-track">
-        <img src="images/update1.png" alt="Industry Update 1">
-        <img src="images/update2.png" alt="Industry Update 2">
-        <img src="images/update3.png" alt="Industry Update 3">
-        <img src="images/update4.png" alt="Industry Update 4">
-      </div>
-    </div>
-  </section>
+<section class="carousel">
+  <h2>Industry Updates</h2>
+  <img src="images/update1.png" alt="Industry Update 1" class="active">
+  <img src="images/update2.png" alt="Industry Update 2">
+  <img src="images/update3.png" alt="Industry Update 3">
+  <img src="images/update4.png" alt="Industry Update 4">
+</section>
 
-  <footer>
-    <p>© VendorConnect EG | Global Supply S.L. | info@globalsupplyeg.com | +240 222 527 519</p>
-  </footer>
+<footer>
+  <p>© VendorConnect EG | Global Supply S.L. | info@globalsupplyeg.com | +240 222 527 519</p>
+</footer>
+
+<script>
+  const slides = document.querySelectorAll('.carousel img');
+  let current = 0;
+
+  setInterval(() => {
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+  }, 6000); // Cambia cada 6 segundos
+</script>
 
 </body>
 </html>
