@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>VendorConnect EG</title>
   <style>
     body {
@@ -33,9 +33,6 @@
       text-decoration: none;
       font-weight: 600;
     }
-    .auth-buttons {
-      margin-left: 30px;
-    }
     .auth-buttons button {
       background: white;
       color: #003366;
@@ -45,9 +42,6 @@
       margin-left: 10px;
       cursor: pointer;
       font-weight: bold;
-    }
-    .auth-buttons button:hover {
-      background-color: #aad8ff;
     }
     .hero {
       background: url('images/bg-welcome.png') center/cover no-repeat;
@@ -68,7 +62,7 @@
       z-index: 1;
     }
     .hero h2 {
-      font-size: 36px;
+      font-size: 34px;
       margin-bottom: 10px;
     }
     .hero p {
@@ -115,76 +109,11 @@
     .cta-card button:hover {
       background: #0059b3;
     }
-
-    .industry-updates {
-      padding: 40px 20px;
-      background: #f0f4f8;
-    }
-
-    .carousel-container {
-      max-width: 1000px;
-      margin: 0 auto;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .carousel {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-      animation: slide 12s infinite;
-    }
-
-    .slide {
-      min-width: 100%;
-      box-sizing: border-box;
-      position: relative;
-    }
-
-    .slide img {
-      width: 100%;
-      border-radius: 10px;
-      height: 300px;
-      object-fit: cover;
-    }
-
-    .caption {
-      position: absolute;
-      bottom: 30px;
-      left: 40px;
-      color: white;
-      background: rgba(0, 0, 0, 0.6);
-      padding: 15px;
-      border-radius: 6px;
-    }
-
-    .caption h3 {
-      margin: 0 0 10px;
-    }
-
-    .caption a {
-      color: #aad8ff;
-      font-weight: bold;
-      text-decoration: underline;
-    }
-
-    @keyframes slide {
-      0%   { transform: translateX(0); }
-      33%  { transform: translateX(-100%); }
-      66%  { transform: translateX(-200%); }
-      100% { transform: translateX(0); }
-    }
-
     footer {
       background: #003366;
       color: white;
       text-align: center;
       padding: 20px;
-      margin-top: 40px;
-    }
-
-    footer a {
-      color: #aad8ff;
-      text-decoration: none;
     }
   </style>
 </head>
@@ -193,75 +122,37 @@
   <header>
     <h1>VendorConnect EG</h1>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="vendors-preview.html">Vendors</a>
-      <a href="tenders.html">Tenders</a>
-      <a href="renewal.html">Register/Renew</a>
-      <a href="contact.html">Contact</a>
-      <div class="auth-buttons">
-        <button onclick="location.href='signin.html'">Sign In</button>
-        <button onclick="location.href='signup.html'">Sign Up</button>
-      </div>
+      <a href="index-es.html" style="text-decoration: underline;">ES</a>
     </nav>
   </header>
 
   <section class="hero">
     <div class="hero-content">
-      <h2>Connecting Supply Chains Across Equatorial Guinea’s Oil & Gas Sector for Smarter Procurement and Stronger Local Content.</h2>
-      <p>The official digital portal for vendor registration, tender access, and compliance visibility.</p>
+      <h2>Connecting Supply Chains Across Equatorial Guinea’s Oil & Gas Sector</h2>
+      <p>The official digital platform for vendor registration, access to tenders, and regulatory compliance in the energy industry.</p>
     </div>
   </section>
 
   <section class="cta">
     <div class="cta-card">
       <h3>For Vendors</h3>
-      <p>Register and manage your MMH license, stay compliant and get visibility across the sector.</p>
+      <p>Register and manage your MMH license, stay compliant, and gain sector-wide visibility.</p>
       <button onclick="location.href='vendor-registration.html'">Register Now</button>
     </div>
     <div class="cta-card">
       <h3>For IOCs</h3>
-      <p>Discover qualified vendors, track compliance, and enhance your procurement workflows.</p>
+      <p>Discover qualified vendors, track compliance, and enhance your procurement process.</p>
       <button onclick="location.href='vendors-preview.html'">Browse Vendors</button>
     </div>
     <div class="cta-card">
       <h3>For Regulators</h3>
-      <p>Monitor license renewals, access vendor reports, and drive local content strategy.</p>
+      <p>Monitor license renewals, access analytics, and drive local content performance.</p>
       <button onclick="location.href='dashboard.html'">Access Dashboard</button>
-    </div>
-  </section>
-
-  <section class="industry-updates">
-    <h2 style="text-align:center; color:#003366; margin-top:60px;">Industry Updates</h2>
-    <div class="carousel-container">
-      <div class="carousel" id="carousel">
-        <div class="slide">
-          <img src="images/update1.png" alt="Update 1">
-          <div class="caption">
-            <h3>Trident Energy Launches Ceiba Upgrade</h3>
-            <a href="#">Read more</a>
-          </div>
-        </div>
-        <div class="slide">
-          <img src="images/update2.png" alt="Update 2">
-          <div class="caption">
-            <h3>MMH Sets Deadline for Vendor License Renewal</h3>
-            <a href="#">Read more</a>
-          </div>
-        </div>
-        <div class="slide">
-          <img src="images/update3.png" alt="Update 3">
-          <div class="caption">
-            <h3>New Offshore Blocks to Be Auctioned in 2025</h3>
-            <a href="#">Read more</a>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
   <footer>
     <p>© VendorConnect EG | Global Supply S.L. | info@globalsupplyeg.com | +240 222 527 519</p>
-    <p><a href="https://github.com/vendorconnect-demo/vendorconnect" target="_blank">View GitHub Repository</a></p>
   </footer>
 
 </body>
