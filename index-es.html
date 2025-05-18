@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>VendorConnect EG</title>
-  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       margin: 0;
@@ -34,9 +33,6 @@
       text-decoration: none;
       font-weight: 600;
     }
-    .auth-buttons {
-      margin-left: 30px;
-    }
     .auth-buttons button {
       background: white;
       color: #003366;
@@ -46,9 +42,6 @@
       margin-left: 10px;
       cursor: pointer;
       font-weight: bold;
-    }
-    .auth-buttons button:hover {
-      background-color: #aad8ff;
     }
     .hero {
       background: url('images/bg-welcome.png') center/cover no-repeat;
@@ -69,12 +62,12 @@
       z-index: 1;
     }
     .hero h2 {
-      font-size: 36px;
+      font-size: 34px;
       margin-bottom: 10px;
     }
     .hero p {
       font-size: 18px;
-      max-width: 600px;
+      max-width: 700px;
       margin: 0 auto 30px;
     }
     .cta {
@@ -121,11 +114,6 @@
       color: white;
       text-align: center;
       padding: 20px;
-      margin-top: 40px;
-    }
-    footer a {
-      color: #aad8ff;
-      text-decoration: none;
     }
   </style>
 </head>
@@ -134,46 +122,37 @@
   <header>
     <h1>VendorConnect EG</h1>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="vendors.html">Vendors</a>
-      <a href="tenders.html">Tenders</a>
-      <a href="renewal.html">Register/Renew</a>
-      <a href="contact.html">Contact</a>
-      <div class="auth-buttons">
-        <button onclick="location.href='signin.html'">Sign In</button>
-        <button onclick="location.href='signup.html'">Sign Up</button>
-      </div>
+      <a href="index.html" style="text-decoration: underline;">EN</a>
     </nav>
   </header>
 
   <section class="hero">
     <div class="hero-content">
-      <h2>Connecting Supply Chains in Equatorial Guinea's Oil and Gas Industry...</h2>
-      <p>The official digital portal for vendor registration, tender access, and compliance visibility.</p>
+      <h2>Conectando la cadena de suministro del sector de petróleo y gas en Guinea Ecuatorial</h2>
+      <p>El portal digital oficial para el registro de proveedores, acceso a licitaciones y cumplimiento normativo.</p>
     </div>
   </section>
 
   <section class="cta">
     <div class="cta-card">
-      <h3>For Vendors</h3>
-      <p>Register and manage your MMH license, stay compliant and get visibility across the sector.</p>
-      <button onclick="location.href='vendor-registration.html'">Register Now</button>
+      <h3>Para Proveedores</h3>
+      <p>Regístrese y gestione su licencia del MMH, mantenga el cumplimiento y gane visibilidad en el sector.</p>
+      <button onclick="location.href='vendor-registration.html'">Registrar</button>
     </div>
     <div class="cta-card">
-      <h3>For IOCs</h3>
-      <p>Discover qualified vendors, track compliance, and enhance your procurement workflows.</p>
-      <button onclick="location.href='vendors.html'">Browse Vendors</button>
+      <h3>Para Operadoras</h3>
+      <p>Descubra proveedores calificados, supervise el cumplimiento y mejore sus procesos de compras.</p>
+      <button onclick="location.href='vendors-preview.html'">Explorar Proveedores</button>
     </div>
     <div class="cta-card">
-      <h3>For Regulators</h3>
-      <p>Monitor license renewals, access vendor reports, and drive local content strategy.</p>
-      <button onclick="location.href='dashboard.html'">Access Dashboard</button>
+      <h3>Para Reguladores</h3>
+      <p>Monitoree renovaciones de licencias, acceda a informes y fortalezca el contenido local.</p>
+      <button onclick="location.href='dashboard.html'">Panel de Control</button>
     </div>
   </section>
 
   <footer>
     <p>© VendorConnect EG | Global Supply S.L. | info@globalsupplyeg.com | +240 222 527 519</p>
-    <p><a href="https://github.com/vendorconnect-demo/vendorconnect" target="_blank">View GitHub Repository</a></p>
   </footer>
 
 </body>
