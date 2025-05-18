@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vendor Panel - VendorConnect EG</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f7fb;
+      margin: 0;
+      padding: 40px 20px;
+      color: #003366;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+    .card {
+      background: #fff;
+      padding: 30px;
+      border-left: 6px solid #003366;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card h3 {
+      margin-top: 0;
+    }
+    .card p {
+      color: #444;
+    }
+    .card button {
+      margin-top: 15px;
+      background-color: #003366;
+      color: #fff;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .card button:hover {
+      background-color: #0059b3;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Vendor Dashboard</h1>
+
+  <div class="grid">
+    <div class="card">
+      <h3>View Tenders</h3>
+      <p>Browse open RFQs and tender opportunities relevant to your category.</p>
+      <button onclick="location.href='tenders.html'">Go to Tenders</button>
+    </div>
+    <div class="card">
+      <h3>Track Your Participation</h3>
+      <p>See the status of tenders you’ve applied for, evaluation updates, or feedback.</p>
+      <button onclick="alert('Feature coming soon')">View Status</button>
+    </div>
+    <div class="card">
+      <h3>Edit Profile & Upload Documents</h3>
+      <p>Update company information, upload required licenses, and manage your visibility.</p>
+      <button onclick="alert('Document panel coming soon')">Manage Profile</button>
+    </div>
+  </div>
+
+</body>
+</html>
