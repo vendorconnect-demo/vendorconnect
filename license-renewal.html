@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Renew License - VendorConnect EG</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #f1f5f9;
+      color: #003366;
+    }
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .form-section {
+      background: white;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      margin-top: 20px;
+      background: #003366;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Renew MMH License</h1>
+    <p>Submit required documents and details for annual license renewal.</p>
+  </header>
+
+  <section class="form-section">
+    <form>
+      <label for="company">Company Name</label>
+      <input type="text" id="company" name="company" required>
+
+      <label for="category">Vendor Category</label>
+      <select id="category" name="category">
+        <option>Logistics</option>
+        <option>Engineering</option>
+        <option>Catering</option>
+        <option>IT Services</option>
+      </select>
+
+      <label for="document">Upload License File</label>
+      <input type="file" id="document" name="document" required>
+
+      <label for="expiration">Current License Expiry</label>
+      <input type="date" id="expiration" name="expiration" required>
+
+      <button type="submit">Submit Renewal</button>
+    </form>
+  </section>
+
+</body>
+</html>
