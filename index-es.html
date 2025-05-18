@@ -97,43 +97,35 @@
       border-radius: 4px;
       cursor: pointer;
     }
+
     .carousel {
       background: #eaeef3;
       padding: 40px 20px;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+      height: 300px;
     }
     .carousel h2 {
       color: #003366;
       margin-bottom: 20px;
     }
-    .carousel-container {
-      overflow: hidden;
-      max-width: 100%;
-      position: relative;
-    }
-    .carousel-track {
-      display: flex;
-      width: 400%;
-      animation: scrollCarousel 24s infinite linear;
-    }
-    .carousel-track img {
+    .carousel img {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
       width: 100%;
-      max-width: 100vw;
+      max-width: 1000px;
       height: 300px;
       object-fit: cover;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
       border-radius: 8px;
     }
-    @keyframes scrollCarousel {
-      0%   { transform: translateX(0%); }
-      20%  { transform: translateX(0%); }
-      25%  { transform: translateX(-100%); }
-      45%  { transform: translateX(-100%); }
-      50%  { transform: translateX(-200%); }
-      70%  { transform: translateX(-200%); }
-      75%  { transform: translateX(-300%); }
-      95%  { transform: translateX(-300%); }
-      100% { transform: translateX(0%); }
+    .carousel img.active {
+      opacity: 1;
     }
+
     footer {
       background: #003366;
       color: white;
@@ -144,62 +136,69 @@
 </head>
 <body>
 
-  <header>
-    <h1>VendorConnect EG</h1>
-    <nav>
-      <a href="signin.html">Iniciar Sesión</a>
-      <a href="signup.html">Registrarse</a>
-      <a href="index.html">EN</a>
-    </nav>
-  </header>
+<header>
+  <h1>VendorConnect EG</h1>
+  <nav>
+    <a href="signin.html">Iniciar Sesión</a>
+    <a href="signup.html">Registrarse</a>
+    <a href="index.html">EN</a>
+  </nav>
+</header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h2>Conectando la Cadena de Suministro del Sector de Petróleo y Gas en Guinea Ecuatorial</h2>
-      <p>La plataforma digital oficial para el registro de proveedores, licitaciones, renovación de licencias y seguimiento del cumplimiento.</p>
-      <button onclick="location.href='signup.html'">Registrar como Proveedor</button>
-      <button onclick="location.href='signin.html'">Acceso de Usuarios</button>
-    </div>
-  </section>
+<section class="hero">
+  <div class="hero-content">
+    <h2>Conectando la Cadena de Suministro del Sector de Petróleo y Gas en Guinea Ecuatorial</h2>
+    <p>La plataforma digital oficial para el registro de proveedores, licitaciones, renovación de licencias y seguimiento del cumplimiento.</p>
+    <button onclick="location.href='signup.html'">Registrar como Proveedor</button>
+    <button onclick="location.href='signin.html'">Acceso de Usuarios</button>
+  </div>
+</section>
 
-  <section class="dashboard">
-    <div class="tile">
-      <h3>Ver Proveedores Registrados</h3>
-      <p>Acceda a perfiles de proveedores organizados por servicio y estado de cumplimiento.</p>
-      <button onclick="location.href='vendors-preview.html'">Explorar</button>
-    </div>
-    <div class="tile">
-      <h3>Ver Oportunidades de Licitación</h3>
-      <p>Explore licitaciones activas y presente su interés de forma segura.</p>
-      <button onclick="location.href='tenders.html'">Licitaciones</button>
-    </div>
-    <div class="tile">
-      <h3>Renovar Licencia</h3>
-      <p>Suba documentos para renovar su licencia del MMH y consulte el estado de su aprobación.</p>
-      <button onclick="location.href='license-renewal.html'">Renovar</button>
-    </div>
-    <div class="tile">
-      <h3>Contacto y Soporte</h3>
-      <p>¿Necesita ayuda? Contacte con nuestro equipo o solicite asistencia.</p>
-      <button onclick="location.href='contact.html'">Contáctenos</button>
-    </div>
-  </section>
+<section class="dashboard">
+  <div class="tile">
+    <h3>Ver Proveedores Registrados</h3>
+    <p>Acceda a perfiles de proveedores organizados por servicio y estado de cumplimiento.</p>
+    <button onclick="location.href='vendors-preview.html'">Explorar</button>
+  </div>
+  <div class="tile">
+    <h3>Ver Oportunidades de Licitación</h3>
+    <p>Explore licitaciones activas y presente su interés de forma segura.</p>
+    <button onclick="location.href='tenders.html'">Licitaciones</button>
+  </div>
+  <div class="tile">
+    <h3>Renovar Licencia</h3>
+    <p>Suba documentos para renovar su licencia del MMH y consulte el estado de su aprobación.</p>
+    <button onclick="location.href='license-renewal.html'">Renovar</button>
+  </div>
+  <div class="tile">
+    <h3>Contacto y Soporte</h3>
+    <p>¿Necesita ayuda? Contacte con nuestro equipo o solicite asistencia.</p>
+    <button onclick="location.href='contact.html'">Contáctenos</button>
+  </div>
+</section>
 
-  <section class="carousel">
-    <h2>Actualizaciones del Sector</h2>
-    <div class="carousel-container">
-      <div class="carousel-track">
-        <img src="images/update1.png" alt="Actualización 1">
-        <img src="images/update2.png" alt="Actualización 2">
-        <img src="images/update3.png" alt="Actualización 3">
-        <img src="images/update4.png" alt="Actualización 4">
-      </div>
-    </div>
-  </section>
+<section class="carousel">
+  <h2>Actualizaciones del Sector</h2>
+  <img src="images/update1.png" alt="Actualización 1" class="active">
+  <img src="images/update2.png" alt="Actualización 2">
+  <img src="images/update3.png" alt="Actualización 3">
+  <img src="images/update4.png" alt="Actualización 4">
+</section>
 
-  <footer>
-    <p>© VendorConnect EG | Global Supply S.L. | info@globalsupplyeg.com | +240 222 527 519</p>
-  </footer>
+<footer>
+  <p>© VendorConnect EG | Global Supply S.L. | info@globalsupplyeg.com | +240 222 527 519</p>
+</footer>
+
+<script>
+  const slides = document.querySelectorAll('.carousel img');
+  let current = 0;
+
+  setInterval(() => {
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+  }, 6000); // Cada 6 segundos
+</script>
 
 </body>
 </html>
