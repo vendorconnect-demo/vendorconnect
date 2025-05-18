@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IOC Dashboard - VendorConnect EG</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 40px 20px;
+      background-color: #f4f7fb;
+      color: #003366;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .actions {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .card {
+      background-color: #fff;
+      padding: 30px;
+      border-left: 6px solid #003366;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+    .card p {
+      color: #444;
+      margin-bottom: 15px;
+    }
+    .card button {
+      padding: 10px 18px;
+      background-color: #003366;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .card button:hover {
+      background-color: #0059b3;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>IOC Dashboard</h1>
+
+  <div class="actions">
+    <div class="card">
+      <h3>Search Vendors</h3>
+      <p>Find and evaluate qualified vendors by category, service, or location.</p>
+      <button onclick="location.href='vendors-full.html'">Go</button>
+    </div>
+    <div class="card">
+      <h3>Create/Publish Bid Package</h3>
+      <p>Launch and manage RFQs or tenders to qualified vendors securely.</p>
+      <button onclick="alert('Feature coming soon')">Create Bid</button>
+    </div>
+    <div class="card">
+      <h3>Download Report</h3>
+      <p>Generate procurement and vendor performance reports in Excel/PDF format.</p>
+      <button onclick="alert('Download not yet available')">Download</button>
+    </div>
+    <div class="card">
+      <h3>Create Announcement</h3>
+      <p>Publish official notices, updates, or requests to the vendor community.</p>
+      <button onclick="alert('Feature under development')">Announce</button>
+    </div>
+  </div>
+
+</body>
+</html>
