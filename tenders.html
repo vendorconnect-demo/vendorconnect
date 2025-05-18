@@ -1,93 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Conduce EG - Tender Opportunities</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tender Opportunities - VendorConnect EG</title>
   <style>
     body {
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background-color: #f4f7f9;
-      color: #333;
+      background-color: #f7f9fc;
+      color: #003366;
+    }
+    header {
+      background-color: #003366;
+      padding: 20px;
+      color: white;
+      text-align: center;
     }
     .container {
+      padding: 40px 20px;
       max-width: 1000px;
-      margin: 60px auto;
-      padding: 2rem;
+      margin: auto;
+    }
+    .tender {
       background: white;
+      padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
-    h1 {
-      text-align: center;
-      color: #0b3d91;
-      margin-bottom: 1rem;
+    .tender h3 {
+      margin: 0;
+      color: #003366;
     }
-    p.description {
-      text-align: center;
-      font-size: 1.05rem;
-      margin-bottom: 2rem;
+    .tender p {
+      margin: 10px 0;
     }
-    .tender-list {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-    .tender-item {
-      padding: 1.5rem;
-      background-color: #f9fbfd;
-      border-left: 6px solid #0b3d91;
-      border-radius: 8px;
-      box-shadow: 0 1px 5px rgba(0,0,0,0.05);
-    }
-    .tender-item h3 {
-      margin-top: 0;
-      color: #0b3d91;
-    }
-    .tender-item p {
-      margin: 0.5rem 0;
-    }
-    .tender-item a {
-      display: inline-block;
-      margin-top: 0.8rem;
-      color: #0b3d91;
-      font-weight: bold;
-      text-decoration: none;
-    }
-    .tender-item a:hover {
-      text-decoration: underline;
+    .tender small {
+      color: #666;
     }
   </style>
 </head>
 <body>
+
+  <header>
+    <h1>Open Tender Opportunities</h1>
+    <p>Browse current opportunities and submit your expression of interest.</p>
+  </header>
+
   <div class="container">
-    <h1>Tender Opportunities</h1>
-    <p class="description">Below are current procurement and partnership opportunities with Conduce EG and the Ministry of Interior. Click on each to learn more and download relevant documents.</p>
-
-    <div class="tender-list">
-      <div class="tender-item">
-        <h3>Supply of Biometric Card Printers</h3>
-        <p><strong>Deadline:</strong> June 15, 2025</p>
-        <p><strong>Reference:</strong> TDR-INT-2025-001</p>
-        <a href="#">Download Tender Document</a>
-      </div>
-
-      <div class="tender-item">
-        <h3>Development of Vehicle Registration API</h3>
-        <p><strong>Deadline:</strong> July 1, 2025</p>
-        <p><strong>Reference:</strong> TDR-INT-2025-002</p>
-        <a href="#">Download Tender Document</a>
-      </div>
-
-      <div class="tender-item">
-        <h3>Installation of Smart Cameras for Road Supervision</h3>
-        <p><strong>Deadline:</strong> July 10, 2025</p>
-        <p><strong>Reference:</strong> TDR-INT-2025-003</p>
-        <a href="#">Download Tender Document</a>
-      </div>
+    <div class="tender">
+      <h3>Provision of Immigration Services</h3>
+      <p>Support for visa processing, work permits, and expatriate compliance.</p>
+      <small>Deadline: June 15, 2025</small>
+    </div>
+    <div class="tender">
+      <h3>Supply of PPE for Offshore Workers</h3>
+      <p>Supply and delivery of certified personal protective equipment.</p>
+      <small>Deadline: June 30, 2025</small>
+    </div>
+    <div class="tender">
+      <h3>Transportation Logistics Support</h3>
+      <p>Fleet provision and logistics coordination for onshore operations.</p>
+      <small>Deadline: July 5, 2025</small>
     </div>
   </div>
+
 </body>
 </html>
