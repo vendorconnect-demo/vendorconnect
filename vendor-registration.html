@@ -1,122 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vendor Registration - VendorConnect EG</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register Your Company</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f4f7fb;
+      background: #f7f9fb;
       padding: 40px;
     }
-    .form-container {
-      max-width: 800px;
-      margin: auto;
-      background: white;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
-    }
-    h2 {
-      text-align: center;
+    h1 {
       color: #003366;
+      text-align: center;
     }
     form {
-      display: grid;
-      gap: 15px;
+      background: #fff;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
     label {
+      display: block;
+      margin-top: 15px;
       font-weight: bold;
-      color: #003366;
     }
-    input[type="text"], input[type="email"], input[type="tel"], input[type="file"], select {
+    input, select, textarea {
       width: 100%;
       padding: 10px;
-      border-radius: 4px;
+      margin-top: 5px;
       border: 1px solid #ccc;
+      border-radius: 4px;
     }
-    .checkbox-group {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-    .checkbox-group label {
-      font-weight: normal;
-      margin-bottom: 5px;
+    .hidden {
+      display: none;
     }
     button {
       background-color: #003366;
       color: white;
-      padding: 12px;
       border: none;
+      padding: 12px 20px;
+      margin-top: 20px;
       border-radius: 5px;
-      font-size: 16px;
       cursor: pointer;
     }
     button:hover {
-      background-color: #0059b3;
+      background-color: #00509e;
     }
   </style>
 </head>
 <body>
-  <div class="form-container">
-    <h2>Vendor Registration</h2>
-    <form>
-      <h3>Company Information</h3>
-      <label>Company Name</label>
-      <input type="text" required />
-      <label>Country of Registration</label>
-      <input type="text" required />
-      <label>Commercial Registration Number</label>
-      <input type="text" required />
-      <label>Physical Address</label>
-      <input type="text" required />
-      <label>Email Address</label>
-      <input type="email" required />
-      <label>Phone Number</label>
-      <input type="tel" required />
 
-      <h3>Contact Person</h3>
-      <label>Full Name</label>
-      <input type="text" required />
-      <label>Position</label>
-      <input type="text" required />
-      <label>Phone</label>
-      <input type="tel" required />
-      <label>Email</label>
-      <input type="email" required />
+<h1>Register Your Company</h1>
+<form>
+  <label for="company">Company Name:</label>
+  <input type="text" id="company" name="company" required>
 
-      <h3>Services Offered</h3>
-      <div class="checkbox-group">
-        <label><input type="checkbox" /> Logistics & Transport</label>
-        <label><input type="checkbox" /> Catering & Hospitality</label>
-        <label><input type="checkbox" /> Engineering Services</label>
-        <label><input type="checkbox" /> Consulting</label>
-        <label><input type="checkbox" /> IT & Telecom</label>
-        <label><input type="checkbox" /> HSE Equipment</label>
-      </div>
+  <label for="nif">NIF (Tax ID):</label>
+  <input type="text" id="nif" name="nif" required>
 
-      <h3>Required Documents</h3>
-      <label>MMH License (PDF)</label>
-      <input type="file" required />
-      <label>Tax Certificate</label>
-      <input type="file" required />
-      <label>Compliance Certificate (if applicable)</label>
-      <input type="file" />
-      <label>Company Brochure / Service Catalog</label>
-      <input type="file" />
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required>
 
-      <h3>Payment Method</h3>
-      <label>Choose Payment Method</label>
-      <select>
-        <option>Credit / Debit Card</option>
-        <option>Bank Transfer</option>
-      </select>
-      <label>Bank Payment Proof (if applicable)</label>
-      <input type="file" />
+  <label for="category">Business Category:</label>
+  <select id="category" name="category" required>
+    <option value="">-- Select --</option>
+    <option value="logistics">Logistics</option>
+    <option value="catering">Catering</option>
+    <option value="construction">Construction</option>
+    <option value="engineering">Engineering</option>
+  </select>
 
-      <button type="submit">Submit Registration</button>
-    </form>
+  <label for="payment">Payment Method:</label>
+  <select id="payment" name="payment" required onchange="togglePayment(this.value)">
+    <option value="">-- Choose Method --</option>
+    <option value="bank">Bank Transfer</option>
+    <option value="card">Credit/Debit Card</option>
+  </select>
+
+  <div id="bank-fields" class="hidden">
+    <label for="bank-slip">Upload Proof of Payment:</label>
+    <input type="file" id="bank-slip" name="bank-slip" accept="image/*,application/pdf">
   </div>
+
+  <div id="card-fields" class="hidden">
+    <label for="card-name">Cardholder Name:</label>
+    <input type="text" id="card-name" name="card-name">
+
+    <label for="card-number">Card Number:</label>
+    <input type="text" id="card-number" name="card-number" maxlength="16">
+
+    <label for="expiry">Expiry Date (MM/YY):</label>
+    <input type="text" id="expiry" name="expiry" placeholder="MM/YY">
+
+    <label for="cvc">CVC:</label>
+    <input type="text" id="cvc" name="cvc" maxlength="4">
+  </div>
+
+  <button type="submit">Submit Registration</button>
+</form>
+
+<script>
+function togglePayment(method) {
+  document.getElementById('bank-fields').classList.add('hidden');
+  document.getElementById('card-fields').classList.add('hidden');
+  if (method === 'bank') {
+    document.getElementById('bank-fields').classList.remove('hidden');
+  } else if (method === 'card') {
+    document.getElementById('card-fields').classList.remove('hidden');
+  }
+}
+</script>
+
 </body>
 </html>
