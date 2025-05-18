@@ -112,7 +112,10 @@
     }
     .carousel img {
       position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
       width: 100%;
+      max-width: 1000px;
       height: 300px;
       object-fit: cover;
       opacity: 0;
@@ -194,7 +197,7 @@
     slides[current].classList.remove('active');
     current = (current + 1) % slides.length;
     slides[current].classList.add('active');
-  }, 6000); // Cambia cada 6 segundos
+  }, 6000); // 6-second timer per image
 </script>
 
 </body>
