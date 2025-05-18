@@ -104,18 +104,33 @@
     }
     .carousel h2 {
       color: #003366;
+      margin-bottom: 20px;
     }
-    .carousel-slide {
+    .carousel-container {
+      overflow: hidden;
+      max-width: 100%;
+      position: relative;
+    }
+    .carousel-track {
       display: flex;
-      overflow-x: auto;
-      gap: 20px;
-      margin-top: 20px;
+      width: 400%;
+      animation: scrollCarousel 12s infinite linear;
     }
-    .carousel-slide img {
-      width: 300px;
-      height: 180px;
+    .carousel-track img {
+      width: 100%;
+      max-width: 100vw;
+      height: 300px;
       object-fit: cover;
       border-radius: 8px;
+    }
+    @keyframes scrollCarousel {
+      0%   { transform: translateX(0%); }
+      25%  { transform: translateX(0%); }
+      33%  { transform: translateX(-100%); }
+      58%  { transform: translateX(-100%); }
+      66%  { transform: translateX(-200%); }
+      91%  { transform: translateX(-200%); }
+      100% { transform: translateX(-300%); }
     }
     footer {
       background: #003366;
@@ -170,11 +185,13 @@
 
   <section class="carousel">
     <h2>Industry Updates</h2>
-    <div class="carousel-slide">
-      <img src="images/update1.png" alt="Industry Update 1">
-      <img src="images/update2.png" alt="Industry Update 2">
-      <img src="images/update3.png" alt="Industry Update 3">
-      <img src="images/update4.png" alt="Industry Update 4">
+    <div class="carousel-container">
+      <div class="carousel-track">
+        <img src="images/update1.png" alt="Industry Update 1">
+        <img src="images/update2.png" alt="Industry Update 2">
+        <img src="images/update3.png" alt="Industry Update 3">
+        <img src="images/update4.png" alt="Industry Update 4">
+      </div>
     </div>
   </section>
 
