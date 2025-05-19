@@ -97,7 +97,6 @@
       border-radius: 4px;
       cursor: pointer;
     }
-
     .carousel {
       background: #eaeef3;
       padding: 40px 20px;
@@ -125,7 +124,6 @@
     .carousel img.active {
       opacity: 1;
     }
-
     footer {
       background: #003366;
       color: white;
@@ -133,7 +131,19 @@
       padding: 20px;
     }
   </style>
+
+  <script>
+    // Redirige automáticamente a la versión en español si el idioma del navegador lo sugiere
+    const userLang = navigator.language || navigator.userLanguage;
+    if (userLang.startsWith('es')) {
+      const currentUrl = window.location.href;
+      if (!currentUrl.includes('index-es.html')) {
+        window.location.href = "index-es.html";
+      }
+    }
+  </script>
 </head>
+
 <body>
 
 <header>
@@ -179,10 +189,10 @@
 
 <section class="carousel">
   <h2>Industry Updates</h2>
-  <img src="images/update1.png" alt="Industry Update 1" class="active">
-  <img src="images/update2.png" alt="Industry Update 2">
-  <img src="images/update3.png" alt="Industry Update 3">
-  <img src="images/update4.png" alt="Industry Update 4">
+  <img src="images/update1.png" alt="Update 1" title="Chevron announces new drilling project" class="active">
+  <img src="images/update2.png" alt="Update 2" title="VAALCO Energy completes offshore survey">
+  <img src="images/update3.png" alt="Update 3" title="Panoro Energy expands operations in Block G">
+  <img src="images/update4.png" alt="Update 4" title="MMH sets new vendor registration deadline">
 </section>
 
 <footer>
@@ -192,12 +202,11 @@
 <script>
   const slides = document.querySelectorAll('.carousel img');
   let current = 0;
-
   setInterval(() => {
     slides[current].classList.remove('active');
     current = (current + 1) % slides.length;
     slides[current].classList.add('active');
-  }, 6000); // 6-second timer per image
+  }, 6000); // Change every 6 seconds
 </script>
 
 </body>
