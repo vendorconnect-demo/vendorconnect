@@ -1,87 +1,137 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>IOC Dashboard - VendorConnect EG</title>
+  <title>Panel de Operador – VendorConnect EG</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 40px 20px;
-      background-color: #f4f7fb;
-      color: #003366;
-    }
-    h1 {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    .actions {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .card {
-      background-color: #fff;
-      padding: 30px;
-      border-left: 6px solid #003366;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      transition: transform 0.2s ease;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-    }
-    .card h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
-    }
-    .card p {
-      color: #444;
-      margin-bottom: 15px;
-    }
-    .card button {
-      padding: 10px 18px;
-      background-color: #003366;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .card button:hover {
-      background-color: #0059b3;
-    }
+    body { background-color: #f4f6f9; font-family: 'Segoe UI', sans-serif; }
+    .card { border-radius: 15px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    .kpi-number { font-size: 2rem; font-weight: bold; }
+    .section-header { margin-top: 30px; margin-bottom: 15px; }
   </style>
 </head>
 <body>
+<div class="container mt-4">
+  <h2 class="text-center mb-4">📡 Panel de Operador – VendorConnect EG</h2>
 
-  <h1>IOC Dashboard</h1>
-
-  <div class="actions">
-    <div class="card">
-      <h3>Search Vendors</h3>
-      <p>Find and evaluate qualified vendors by category, service, or location.</p>
-      <button onclick="location.href='vendors-full.html'">Go</button>
+  <!-- KPIs -->
+  <div class="row text-center mb-4">
+    <div class="col-md-3">
+      <div class="card p-3 bg-white">
+        <div>Licitaciones Publicadas</div>
+        <div class="kpi-number text-primary">24</div>
+      </div>
     </div>
-    <div class="card">
-      <h3>Create/Publish Bid Package</h3>
-      <p>Launch and manage RFQs or tenders to qualified vendors securely.</p>
-      <button onclick="alert('Feature coming soon')">Create Bid</button>
+    <div class="col-md-3">
+      <div class="card p-3 bg-white">
+        <div>Proveedores Participantes</div>
+        <div class="kpi-number text-success">162</div>
+      </div>
     </div>
-    <div class="card">
-      <h3>Download Report</h3>
-      <p>Generate procurement and vendor performance reports in Excel/PDF format.</p>
-      <button onclick="alert('Download not yet available')">Download</button>
+    <div class="col-md-3">
+      <div class="card p-3 bg-white">
+        <div>Contenido Local</div>
+        <div class="kpi-number text-warning">58%</div>
+      </div>
     </div>
-    <div class="card">
-      <h3>Create Announcement</h3>
-      <p>Publish official notices, updates, or requests to the vendor community.</p>
-      <button onclick="alert('Feature under development')">Announce</button>
+    <div class="col-md-3">
+      <div class="card p-3 bg-white">
+        <div>Reportes Enviados al MMH</div>
+        <div class="kpi-number text-danger">4</div>
+      </div>
     </div>
   </div>
+
+  <!-- Graphs -->
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <div class="card p-4">
+        <h5 class="text-center">Evolución de Participación Nacional</h5>
+        <canvas id="localTrend"></canvas>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card p-4">
+        <h5 class="text-center">Distribución de Proveedores por Sector</h5>
+        <canvas id="sectorChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Table -->
+  <div class="section-header">
+    <h5>📁 Licitaciones Recientes</h5>
+  </div>
+  <table class="table table-hover bg-white shadow-sm">
+    <thead class="table-light">
+      <tr>
+        <th>#</th>
+        <th>Nombre</th>
+        <th>Estado</th>
+        <th>Proveedores</th>
+        <th>Acción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>001</td>
+        <td>Servicios de Transporte</td>
+        <td><span class="badge bg-info text-dark">Activa</span></td>
+        <td>8</td>
+        <td><button class="btn btn-sm btn-outline-primary">Ver</button></td>
+      </tr>
+      <tr>
+        <td>002</td>
+        <td>Suministro de Equipos</td>
+        <td><span class="badge bg-secondary">Cerrada</span></td>
+        <td>12</td>
+        <td><button class="btn btn-sm btn-secondary" disabled>Archivada</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Buttons -->
+  <div class="text-end my-4">
+    <button class="btn btn-success me-2">+ Nueva Licitación</button>
+    <button class="btn btn-outline-dark">Generar Reporte</button>
+  </div>
+</div>
+
+<!-- Chart.js Config -->
+<script>
+  new Chart(document.getElementById('localTrend'), {
+    type: 'line',
+    data: {
+      labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May'],
+      datasets: [{
+        label: 'Contenido Local (%)',
+        data: [52, 60, 57, 61, 58],
+        borderColor: '#ffc107',
+        fill: false,
+        tension: 0.3
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: { y: { beginAtZero: true, max: 100 } }
+    }
+  });
+
+  new Chart(document.getElementById('sectorChart'), {
+    type: 'doughnut',
+    data: {
+      labels: ['Logística', 'Construcción', 'Mantenimiento', 'Seguridad'],
+      datasets: [{
+        data: [50, 40, 30, 20],
+        backgroundColor: ['#0d6efd', '#198754', '#ffc107', '#dc3545']
+      }]
+    },
+    options: { responsive: true }
+  });
+</script>
 
 </body>
 </html>
