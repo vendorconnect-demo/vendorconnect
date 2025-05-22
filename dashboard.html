@@ -5,43 +5,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Panel MMH – VendorConnect EG</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
-    .kpi-card { border-radius: 12px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 20px; }
-    .kpi-value { font-size: 2em; font-weight: bold; }
-    .section-title { margin-top: 30px; margin-bottom: 15px; }
+    body { background-color: #f4f6f9; }
+    .card { border-radius: 15px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    .kpi-number { font-size: 2rem; font-weight: bold; }
+    .section-header { margin-top: 30px; margin-bottom: 10px; }
   </style>
 </head>
-<body class="bg-light">
-
+<body>
 <div class="container mt-4">
-  <h2 class="text-center mb-4">📊 Panel de Control – MMH</h2>
+  <h2 class="text-center mb-4">📊 Panel de Control – Ministerio de Minas</h2>
 
-  <!-- KPIs principales -->
-  <div class="row text-center">
-    <div class="col-md-3 kpi-card bg-white">
-      <div>Proveedores Registrados</div>
-      <div class="kpi-value text-primary">250</div>
+  <!-- KPIs -->
+  <div class="row text-center mb-4">
+    <div class="col-md-3">
+      <div class="card p-3">
+        <div>Proveedores Registrados</div>
+        <div class="kpi-number text-primary">253</div>
+      </div>
     </div>
-    <div class="col-md-3 kpi-card bg-white">
-      <div>Licitaciones Activas</div>
-      <div class="kpi-value text-success">12</div>
+    <div class="col-md-3">
+      <div class="card p-3">
+        <div>Licitaciones Activas</div>
+        <div class="kpi-number text-success">17</div>
+      </div>
     </div>
-    <div class="col-md-3 kpi-card bg-white">
-      <div>Licencias Emitidas</div>
-      <div class="kpi-value text-warning">185</div>
+    <div class="col-md-3">
+      <div class="card p-3">
+        <div>Licencias Emitidas</div>
+        <div class="kpi-number text-warning">128</div>
+      </div>
     </div>
-    <div class="col-md-3 kpi-card bg-white">
-      <div>Contenido Local (%)</div>
-      <div class="kpi-value text-danger">64%</div>
+    <div class="col-md-3">
+      <div class="card p-3">
+        <div>Contenido Local</div>
+        <div class="kpi-number text-danger">62%</div>
+      </div>
     </div>
   </div>
 
-  <!-- Sección de tabla -->
-  <div class="section-title">
-    <h4>📂 Empresas en Revisión</h4>
+  <!-- Gráfico de contenido local -->
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <div class="card p-3">
+        <h5 class="text-center">Distribución de Proveedores</h5>
+        <canvas id="providerPie"></canvas>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card p-3">
+        <h5 class="text-center">Tendencia de Licencias Emitidas</h5>
+        <canvas id="licenseTrend"></canvas>
+      </div>
+    </div>
   </div>
-  <table class="table table-striped bg-white">
-    <thead>
+
+  <!-- Tabla de empresas -->
+  <div class="section-header">
+    <h5>📂 Empresas en Revisión</h5>
+  </div>
+  <table class="table table-striped bg-white rounded shadow-sm">
+    <thead class="table-light">
       <tr>
         <th>Empresa</th>
         <th>Tipo</th>
@@ -65,13 +90,49 @@
     </tbody>
   </table>
 
-  <!-- Botones de acción -->
-  <div class="text-end mt-4">
-    <button class="btn btn-success">+ Emitir Nueva Licencia</button>
+  <!-- Acciones -->
+  <div class="text-end mb-5">
+    <button class="btn btn-success me-2">+ Emitir Nueva Licencia</button>
     <button class="btn btn-outline-primary">Generar Reporte</button>
   </div>
-
 </div>
+
+<!-- Gráficos con Chart.js -->
+<script>
+  // Pie Chart
+  new Chart(document.getElementById('providerPie'), {
+    type: 'doughnut',
+    data: {
+      labels: ['Nacionales', 'Internacionales'],
+      datasets: [{
+        data: [180, 73],
+        backgroundColor: ['#198754', '#0d6efd']
+      }]
+    },
+    options: { responsive: true }
+  });
+
+  // Line Chart
+  new Chart(document.getElementById('licenseTrend'), {
+    type: 'line',
+    data: {
+      labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May'],
+      datasets: [{
+        label: 'Licencias',
+        data: [25, 40, 35, 50, 60],
+        borderColor: '#ffc107',
+        fill: false,
+        tension: 0.3
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: { beginAtZero: true }
+      }
+    }
+  });
+</script>
 
 </body>
 </html>
