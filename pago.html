@@ -1,55 +1,27 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pago de Suscripción – VendorConnect EG</title>
+  <title>Solicitud Enviada – VendorConnect EG</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <style>
     body { background-color: #f8f9fa; font-family: 'Segoe UI', sans-serif; }
-    .container { max-width: 700px; margin-top: 50px; }
-    .card { border-radius: 12px; padding: 30px; box-shadow: 0 3px 10px rgba(0,0,0,0.08); }
+    .container { max-width: 600px; margin-top: 80px; }
+    .card { border-radius: 15px; padding: 40px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); background: white; }
   </style>
 </head>
 <body>
 
-<div class="container">
+<div class="container text-center">
   <div class="card">
-    <h2 class="text-center mb-4">Activación de Suscripción</h2>
-    <p class="text-muted text-center">Gracias por completar tu registro. Ahora selecciona tu plan para activar tu cuenta en VendorConnect EG.</p>
-
-    <div class="mt-4">
-      <h5>Tu Perfil: <span id="tipoPerfil" class="text-primary">Proveedor</span></h5>
-      <ul class="list-group list-group-flush mb-4">
-        <li class="list-group-item">✔️ Acceso completo a licitaciones</li>
-        <li class="list-group-item">✔️ Gestión de licencias en línea</li>
-        <li class="list-group-item">✔️ Visibilidad en el ecosistema de contenido local</li>
-      </ul>
-      <div class="bg-light p-3 rounded mb-3">
-        <h6>Plan de Suscripción:</h6>
-        <p class="m-0">Monto a pagar: <strong id="tarifaPlan">120.000 XAF / año</strong></p>
-      </div>
-      <button class="btn btn-success w-100">Proceder al Pago</button>
-    </div>
+    <h2 class="text-success mb-3">✅ Solicitud Enviada</h2>
+    <p>Gracias por registrarte en <strong>VendorConnect EG</strong>.</p>
+    <p>Tu solicitud ha sido recibida y está siendo evaluada por el <strong>Ministerio de Minas e Hidrocarburos (MMH)</strong>.</p>
+    <p>Una vez aprobada, recibirás una notificación para proceder con la activación de tu cuenta.</p>
+    <a href="index.html" class="btn btn-outline-primary mt-4">Volver al Inicio</a>
   </div>
 </div>
-
-<script>
-  const params = new URLSearchParams(window.location.search);
-  const perfil = params.get('perfil');
-
-  const datos = {
-    proveedor: { nombre: "Proveedor Nacional", tarifa: "120.000 XAF / año" },
-    operador: { nombre: "Operador Petrolero", tarifa: "1.800.000 XAF / año" },
-    internacional: { nombre: "Proveedor Internacional", tarifa: "240.000 XAF / año" }
-  };
-
-  if (perfil && datos[perfil]) {
-    document.getElementById("tipoPerfil").innerText = datos[perfil].nombre;
-    document.getElementById("tarifaPlan").innerText = datos[perfil].tarifa;
-  }
-</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
