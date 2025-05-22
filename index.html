@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>VendorConnect EG – Plataforma Oficial de Proveedores</title>
+  <title>VendorConnect EG – Plataforma Oficial</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
   <style>
     body { font-family: 'Segoe UI', sans-serif; background-color: #f8f9fa; }
-    .hero { background: linear-gradient(90deg, #003366 0%, #005d7a 100%); color: white; padding: 100px 20px; text-align: center; }
+    .hero { background: linear-gradient(90deg, #003366, #005d7a); color: white; padding: 100px 20px; text-align: center; }
     .hero h1 { font-size: 3rem; font-weight: bold; }
     .hero p { font-size: 1.25rem; }
     .section-title { margin-top: 60px; margin-bottom: 30px; }
@@ -15,68 +16,87 @@
     .icon-box:hover { transform: translateY(-5px); }
     .icon-box i { font-size: 2rem; margin-bottom: 15px; color: #005d7a; }
     footer { background-color: #003366; color: white; padding: 30px 0; }
+    .nav-link { color: white !important; font-weight: 500; }
   </style>
 </head>
 <body>
 
-<!-- Hero Section -->
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">VendorConnect EG</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+        <li class="nav-item"><a href="register.html" class="nav-link">Registro</a></li>
+        <li class="nav-item"><a href="login.html" class="nav-link">Iniciar Sesión</a></li>
+        <li class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
 <section class="hero">
   <div class="container">
     <h1>VendorConnect EG</h1>
-    <p>Tu enlace oficial entre proveedores, operadoras y el Ministerio de Minas e Hidrocarburos.</p>
+    <p>Tu portal digital para licencias, licitaciones y contenido local en el sector hidrocarburos.</p>
     <a href="register.html" class="btn btn-light btn-lg mt-3">Regístrate Ahora</a>
   </div>
 </section>
 
-<!-- About Section -->
+<!-- ¿QUÉ ES? -->
 <section class="container text-center section-title">
   <h2 class="fw-bold">¿Qué es VendorConnect EG?</h2>
-  <p class="text-muted">Una plataforma digital para la gestión de licencias, publicación de licitaciones y registro oficial de proveedores en el sector hidrocarburos de Guinea Ecuatorial.</p>
+  <p class="text-muted">Es la herramienta oficial que conecta al Ministerio de Minas, empresas operadoras y proveedores nacionales e internacionales.</p>
 </section>
 
-<!-- Features -->
+<!-- FUNCIONALIDADES -->
 <section class="container my-5">
   <div class="row text-center g-4">
     <div class="col-md-4">
       <div class="icon-box">
         <i class="bi bi-card-checklist"></i>
         <h5>Licencias Digitales</h5>
-        <p>Solicita, renueva y gestiona tus licencias en línea con trazabilidad completa.</p>
+        <p>Solicita y gestiona tus licencias desde un solo lugar con trazabilidad y validación oficial.</p>
       </div>
     </div>
     <div class="col-md-4">
       <div class="icon-box">
         <i class="bi bi-megaphone"></i>
-        <h5>Licitaciones Públicas</h5>
-        <p>Accede a oportunidades reales publicadas por operadoras y empresas estatales.</p>
+        <h5>Licitaciones</h5>
+        <p>Consulta y postúlate a oportunidades reales con entidades del sector energético.</p>
       </div>
     </div>
     <div class="col-md-4">
       <div class="icon-box">
-        <i class="bi bi-bar-chart"></i>
-        <h5>Panel Institucional</h5>
-        <p>Monitoreo en tiempo real por el MMH del cumplimiento del contenido local.</p>
+        <i class="bi bi-speedometer2"></i>
+        <h5>Panel para Reguladores</h5>
+        <p>Supervisión en tiempo real por el Ministerio sobre cumplimiento del contenido local.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Call to Action -->
+<!-- CTA -->
 <section class="text-center bg-white py-5">
-  <h3 class="mb-3">¿Eres proveedor o representante de una operadora?</h3>
-  <p class="text-muted">Únete a la plataforma oficial y cumple con las normativas del sector.</p>
-  <a href="login.html" class="btn btn-primary btn-lg">Accede al Portal</a>
+  <h3 class="mb-3">¿Ya tienes una cuenta?</h3>
+  <p class="text-muted">Accede a tu panel para gestionar tus procesos.</p>
+  <a href="login.html" class="btn btn-primary btn-lg">Iniciar Sesión</a>
 </section>
 
-<!-- Footer -->
+<!-- FOOTER -->
 <footer class="text-center">
   <div class="container">
     <p class="mb-1">VendorConnect EG &copy; 2025 – Todos los derechos reservados</p>
-    <p style="font-size: 0.9rem;">Desarrollado por Global Supply S.L. con apoyo institucional del MMH</p>
+    <p style="font-size: 0.9rem;">Desarrollado por Global Supply S.L. – con respaldo del Ministerio de Minas e Hidrocarburos</p>
   </div>
 </footer>
 
-<!-- Bootstrap Icons -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
