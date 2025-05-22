@@ -1,213 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>VendorConnect EG</title>
+  <title>VendorConnect EG – Plataforma Oficial de Proveedores</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f4f7fb;
-      color: #333;
-    }
-    header {
-      background-color: #003366;
-      padding: 20px 40px;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 22px;
-    }
-    nav a {
-      color: white;
-      margin-left: 20px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .hero {
-      background: url('images/bg-welcome.png') center/cover no-repeat;
-      padding: 100px 20px;
-      text-align: center;
-      color: white;
-      position: relative;
-    }
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 51, 102, 0.65);
-      z-index: 0;
-    }
-    .hero-content {
-      position: relative;
-      z-index: 1;
-    }
-    .hero h2 {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-    .hero p {
-      font-size: 18px;
-      max-width: 680px;
-      margin: 0 auto 20px;
-    }
-    .hero button {
-      padding: 10px 20px;
-      background-color: #fff;
-      color: #003366;
-      font-weight: bold;
-      border: none;
-      border-radius: 5px;
-      margin: 10px;
-      cursor: pointer;
-    }
-    .dashboard {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      padding: 40px 20px;
-    }
-    .tile {
-      background: #fff;
-      padding: 30px;
-      width: 250px;
-      text-align: center;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
-    .tile h3 {
-      color: #003366;
-    }
-    .tile p {
-      font-size: 14px;
-      color: #444;
-    }
-    .tile button {
-      margin-top: 10px;
-      background-color: #003366;
-      color: white;
-      padding: 8px 16px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    .carousel {
-      background: #eaeef3;
-      padding: 40px 20px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      height: 300px;
-    }
-    .carousel h2 {
-      color: #003366;
-      margin-bottom: 20px;
-    }
-    .carousel img {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100%;
-      max-width: 1000px;
-      height: 300px;
-      object-fit: cover;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-      border-radius: 8px;
-    }
-    .carousel img.active {
-      opacity: 1;
-    }
-    footer {
-      background: #003366;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
+    body { font-family: 'Segoe UI', sans-serif; background-color: #f8f9fa; }
+    .hero { background: linear-gradient(90deg, #003366 0%, #005d7a 100%); color: white; padding: 100px 20px; text-align: center; }
+    .hero h1 { font-size: 3rem; font-weight: bold; }
+    .hero p { font-size: 1.25rem; }
+    .section-title { margin-top: 60px; margin-bottom: 30px; }
+    .icon-box { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 3px 10px rgba(0,0,0,0.05); transition: 0.3s; }
+    .icon-box:hover { transform: translateY(-5px); }
+    .icon-box i { font-size: 2rem; margin-bottom: 15px; color: #005d7a; }
+    footer { background-color: #003366; color: white; padding: 30px 0; }
   </style>
-
-  <script>
-    // Redirige automáticamente a la versión en español si el idioma del navegador lo sugiere
-    const userLang = navigator.language || navigator.userLanguage;
-    if (userLang.startsWith('es')) {
-      const currentUrl = window.location.href;
-      if (!currentUrl.includes('index-es.html')) {
-        window.location.href = "index-es.html";
-      }
-    }
-  </script>
 </head>
-
 <body>
 
-<header>
-  <h1>VendorConnect EG</h1>
-  <nav>
-    <a href="signin.html">Sign In</a>
-    <a href="signup.html">Sign Up</a>
-    <a href="index-es.html">ES</a>
-  </nav>
-</header>
-
+<!-- Hero Section -->
 <section class="hero">
-  <div class="hero-content">
-    <h2>Connecting Supply Chains Across Equatorial Guinea’s Oil & Gas Sector</h2>
-    <p>The official digital platform for vendor registration, tenders, license renewal and compliance monitoring.</p>
-    <button onclick="location.href='signup.html'">Register as Vendor</button>
-    <button onclick="location.href='signin.html'">Stakeholder Login</button>
+  <div class="container">
+    <h1>VendorConnect EG</h1>
+    <p>Tu enlace oficial entre proveedores, operadoras y el Ministerio de Minas e Hidrocarburos.</p>
+    <a href="register.html" class="btn btn-light btn-lg mt-3">Regístrate Ahora</a>
   </div>
 </section>
 
-<section class="dashboard">
-  <div class="tile">
-    <h3>View Registered Vendors</h3>
-    <p>Access vendor profiles categorized by service and compliance status.</p>
-    <button onclick="location.href='vendors-preview.html'">Browse</button>
-  </div>
-  <div class="tile">
-    <h3>Browse Tender Opportunities</h3>
-    <p>Explore open RFQs and submit your interest securely.</p>
-    <button onclick="location.href='tenders.html'">Tenders</button>
-  </div>
-  <div class="tile">
-    <h3>Submit License Renewal</h3>
-    <p>Upload documents for your MMH license update and check approval status.</p>
-    <button onclick="location.href='license-renewal.html'">Renew</button>
-  </div>
-  <div class="tile">
-    <h3>Contact Support</h3>
-    <p>Need help? Get in touch with our team or request assistance.</p>
-    <button onclick="location.href='contact.html'">Contact Us</button>
+<!-- About Section -->
+<section class="container text-center section-title">
+  <h2 class="fw-bold">¿Qué es VendorConnect EG?</h2>
+  <p class="text-muted">Una plataforma digital para la gestión de licencias, publicación de licitaciones y registro oficial de proveedores en el sector hidrocarburos de Guinea Ecuatorial.</p>
+</section>
+
+<!-- Features -->
+<section class="container my-5">
+  <div class="row text-center g-4">
+    <div class="col-md-4">
+      <div class="icon-box">
+        <i class="bi bi-card-checklist"></i>
+        <h5>Licencias Digitales</h5>
+        <p>Solicita, renueva y gestiona tus licencias en línea con trazabilidad completa.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="icon-box">
+        <i class="bi bi-megaphone"></i>
+        <h5>Licitaciones Públicas</h5>
+        <p>Accede a oportunidades reales publicadas por operadoras y empresas estatales.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="icon-box">
+        <i class="bi bi-bar-chart"></i>
+        <h5>Panel Institucional</h5>
+        <p>Monitoreo en tiempo real por el MMH del cumplimiento del contenido local.</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="carousel">
-  <h2>Industry Updates</h2>
-  <img src="images/update1.png" alt="Update 1" title="Chevron announces new drilling project" class="active">
-  <img src="images/update2.png" alt="Update 2" title="VAALCO Energy completes offshore survey">
-  <img src="images/update3.png" alt="Update 3" title="Panoro Energy expands operations in Block G">
-  <img src="images/update4.png" alt="Update 4" title="MMH sets new vendor registration deadline">
+<!-- Call to Action -->
+<section class="text-center bg-white py-5">
+  <h3 class="mb-3">¿Eres proveedor o representante de una operadora?</h3>
+  <p class="text-muted">Únete a la plataforma oficial y cumple con las normativas del sector.</p>
+  <a href="login.html" class="btn btn-primary btn-lg">Accede al Portal</a>
 </section>
 
-<footer>
-  <p>© VendorConnect EG | Global Supply S.L. | info@globalsupplyeg.com | +240 222 527 519</p>
+<!-- Footer -->
+<footer class="text-center">
+  <div class="container">
+    <p class="mb-1">VendorConnect EG &copy; 2025 – Todos los derechos reservados</p>
+    <p style="font-size: 0.9rem;">Desarrollado por Global Supply S.L. con apoyo institucional del MMH</p>
+  </div>
 </footer>
 
-<script>
-  const slides = document.querySelectorAll('.carousel img');
-  let current = 0;
-  setInterval(() => {
-    slides[current].classList.remove('active');
-    current = (current + 1) % slides.length;
-    slides[current].classList.add('active');
-  }, 6000); // Change every 6 seconds
-</script>
-
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 </body>
 </html>
