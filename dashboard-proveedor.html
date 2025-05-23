@@ -2,84 +2,131 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Panel del Proveedor | VendorConnect EG</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
   <style>
-    body { font-family: 'Segoe UI', sans-serif; background-color: #f8f9fa; }
-    .sidebar {
-      width: 250px; height: 100vh; position: fixed; background-color: #003366; color: white; padding-top: 20px;
+    body {
+      background: linear-gradient(#f0f4f8, #ffffff);
+      font-family: 'Segoe UI', sans-serif;
     }
-    .sidebar a {
-      color: white; display: block; padding: 12px 20px; text-decoration: none;
-    }
-    .sidebar a:hover {
-      background-color: #005d7a;
-    }
-    .content {
-      margin-left: 260px; padding: 30px;
+    .container {
+      padding: 40px 20px;
+      max-width: 1350px;
     }
     .card {
-      border: none; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 25px;
+      border-radius: 15px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      padding: 20px;
+      transition: all 0.3s ease-in-out;
+    }
+    .card:hover {
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .section-title {
+      margin: 50px 0 20px;
+      font-weight: bold;
+      color: #003366;
+      font-size: 1.3rem;
+    }
+    .btn-wide {
+      width: 100%;
+      margin-top: 10px;
+    }
+    h2 {
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
 
-<div class="sidebar">
-  <h4 class="text-center">🧰 Proveedor</h4>
-  <a href="#resumen"><i class="bi bi-speedometer2 me-2"></i> Resumen</a>
-  <a href="#licencia"><i class="bi bi-file-earmark-text me-2"></i> Mi Licencia</a>
-  <a href="#licitaciones"><i class="bi bi-briefcase me-2"></i> Licitaciones</a>
-  <a href="#perfil"><i class="bi bi-person-vcard me-2"></i> Perfil</a>
-  <a href="#historial"><i class="bi bi-clock-history me-2"></i> Historial</a>
-</div>
+<div class="container">
+  <h2 class="text-center text-primary mb-5">🎯 Panel del Proveedor – VendorConnect EG</h2>
 
-<div class="content">
-  <h2 class="mb-4">Panel del Proveedor Registrado</h2>
-
-  <section id="resumen">
-    <div class="row g-3">
-      <div class="col-md-4"><div class="card p-4"><h5>Estado de Cuenta</h5><p class="text-success fw-bold">✅ Aprobado</p></div></div>
-      <div class="col-md-4"><div class="card p-4"><h5>Licencia</h5><p class="text-primary">Vigente hasta 31/12/2025</p></div></div>
-      <div class="col-md-4"><div class="card p-4"><h5>Licitaciones Abiertas</h5><p>5 oportunidades disponibles</p></div></div>
+  <!-- KPIs -->
+  <div class="row text-center mb-4">
+    <div class="col-md-3">
+      <div class="card bg-white">
+        <div class="fw-semibold mb-1">📄 Licitaciones Aplicadas</div>
+        <h3 class="text-primary">5</h3>
+      </div>
     </div>
-  </section>
-
-  <section id="licencia">
-    <div class="card p-4">
-      <h4>🗂️ Mi Licencia</h4>
-      <p>Consulta el estado de tu licencia y solicita renovación si es necesario. Adjunta la documentación requerida.</p>
-      <a href="#" class="btn btn-outline-primary mt-2">Ver Licencia</a>
-      <a href="#" class="btn btn-outline-secondary mt-2">Solicitar Renovación</a>
+    <div class="col-md-3">
+      <div class="card bg-white">
+        <div class="fw-semibold mb-1">✅ Licencia Actual</div>
+        <h3 class="text-success">Válida</h3>
+      </div>
     </div>
-  </section>
-
-  <section id="licitaciones">
-    <div class="card p-4">
-      <h4>📢 Licitaciones Disponibles</h4>
-      <p>Aplica a oportunidades abiertas publicadas por operadoras o empresas estatales. Filtra por categoría o región.</p>
-      <a href="#" class="btn btn-outline-success">Ver y Postular</a>
+    <div class="col-md-3">
+      <div class="card bg-white">
+        <div class="fw-semibold mb-1">📊 Éxito en Aplicaciones</div>
+        <h3 class="text-warning">40%</h3>
+      </div>
     </div>
-  </section>
-
-  <section id="perfil">
-    <div class="card p-4">
-      <h4>👤 Perfil de Empresa</h4>
-      <p>Actualiza tu información de empresa, categoría de servicios, contactos y documentos administrativos.</p>
-      <a href="#" class="btn btn-outline-dark">Editar Perfil</a>
+    <div class="col-md-3">
+      <div class="card bg-white">
+        <div class="fw-semibold mb-1">⚠️ Documentos Pendientes</div>
+        <h3 class="text-danger">2</h3>
+      </div>
     </div>
-  </section>
+  </div>
 
-  <section id="historial">
-    <div class="card p-4">
-      <h4>📈 Historial de Postulaciones</h4>
-      <p>Consulta todas las licitaciones a las que te has postulado, el estado de cada aplicación y resultados anteriores.</p>
-      <a href="#" class="btn btn-outline-warning">Ver Historial</a>
+  <!-- Gestión de Licencias -->
+  <h4 class="section-title"><i class="bi bi-file-earmark-lock-fill me-2"></i>Mi Licencia y Documentación</h4>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card text-center">
+        <div>Ver estado y datos de la licencia actual</div>
+        <a href="#" class="btn btn-outline-info btn-wide">Ver Licencia</a>
+      </div>
     </div>
-  </section>
+    <div class="col-md-6">
+      <div class="card text-center">
+        <div>Actualizar documentos requeridos o renovar</div>
+        <a href="#" class="btn btn-outline-secondary btn-wide">Subir Documentos</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Licitaciones -->
+  <h4 class="section-title"><i class="bi bi-megaphone-fill me-2"></i>Licitaciones Disponibles</h4>
+  <div class="card text-center">
+    <p>Consulta las oportunidades abiertas y postula en tiempo real.</p>
+    <a href="tenders-proveedor.html" class="btn btn-outline-primary btn-wide"><i class="bi bi-card-checklist me-1"></i> Ver Licitaciones</a>
+  </div>
+
+  <!-- Perfil de Empresa -->
+  <h4 class="section-title"><i class="bi bi-person-badge-fill me-2"></i>Mi Perfil Profesional</h4>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card text-center">
+        <div>Así ven tu empresa las operadoras y el MMH</div>
+        <a href="#" class="btn btn-outline-dark btn-wide">Ver Perfil Público</a>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card text-center">
+        <div>Actualiza tu información y certificados corporativos</div>
+        <a href="#" class="btn btn-outline-success btn-wide">Actualizar Perfil</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Historial -->
+  <h4 class="section-title"><i class="bi bi-clock-history me-2"></i>Historial de Postulaciones</h4>
+  <div class="card text-center">
+    <p>Revisa tu historial completo de participación en licitaciones.</p>
+    <a href="#" class="btn btn-outline-secondary btn-wide">Ver Historial</a>
+  </div>
+
+  <!-- Soporte -->
+  <h4 class="section-title"><i class="bi bi-question-circle-fill me-2"></i>Soporte y Ayuda</h4>
+  <div class="card text-center">
+    <p>Consulta requisitos, preguntas frecuentes o contacta con soporte técnico.</p>
+    <a href="#" class="btn btn-outline-warning btn-wide">Ir al Centro de Ayuda</a>
+  </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
