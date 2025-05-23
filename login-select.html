@@ -2,48 +2,58 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Seleccionar Tipo de Acceso – VendorConnect EG</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selecciona tu Perfil | VendorConnect EG</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <style>
     body {
-      background-color: #f4f6f9;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                  url('images/bg-welcome.png') center center/cover no-repeat;
+      height: 100vh;
       font-family: 'Segoe UI', sans-serif;
       display: flex;
-      align-items: center;
       justify-content: center;
-      min-height: 100vh;
-      padding: 20px;
-    }
-    .card {
-      background-color: white;
-      padding: 40px;
-      border-radius: 16px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      align-items: center;
+      color: white;
       text-align: center;
-      max-width: 500px;
-      width: 100%;
     }
-    .card h3 {
-      margin-bottom: 30px;
+    .access-box {
+      background-color: rgba(255,255,255,0.95);
       color: #003366;
+      padding: 40px;
+      border-radius: 15px;
+      max-width: 600px;
+      width: 100%;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
-    .btn-option {
+    .access-box h2 {
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+    .btn-access {
       width: 100%;
       margin-bottom: 15px;
       padding: 15px;
+      border-radius: 30px;
       font-size: 1.1rem;
     }
   </style>
 </head>
 <body>
 
-<div class="card">
-  <h3>Selecciona tu tipo de acceso</h3>
-  <a href="login.html?perfil=proveedor" class="btn btn-outline-primary btn-option">🧰 Proveedor</a>
-  <a href="login.html?perfil=operador" class="btn btn-outline-success btn-option">🏭 Operador</a>
-  <a href="login-mmh.html" class="btn btn-outline-warning btn-option text-dark">🛡️ Ministerio (MMH)</a>
+<div class="access-box">
+  <h2>Selecciona tu tipo de acceso</h2>
+  <a href="login-mmh.html" class="btn btn-outline-primary btn-access">
+    <i class="bi bi-shield-lock-fill me-2"></i> Ministerio de Minas e Hidrocarburos (MMH)
+  </a>
+  <a href="login-operador.html" class="btn btn-outline-success btn-access">
+    <i class="bi bi-building me-2"></i> Operadora Petrolera
+  </a>
+  <a href="login-proveedor.html" class="btn btn-outline-dark btn-access">
+    <i class="bi bi-truck me-2"></i> Proveedor de Bienes o Servicios
+  </a>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
