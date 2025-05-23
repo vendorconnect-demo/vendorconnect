@@ -1,70 +1,80 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tender Opportunities - VendorConnect EG</title>
+  <title>Licitaciones | VendorConnect EG</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <style>
     body {
+      background: linear-gradient(#f0f4f9, #ffffff);
       font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      background-color: #f7f9fc;
-      color: #003366;
-    }
-    header {
-      background-color: #003366;
-      padding: 20px;
-      color: white;
-      text-align: center;
     }
     .container {
+      max-width: 1300px;
       padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
     }
-    .tender {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    .card {
+      border-radius: 15px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+      margin-bottom: 30px;
+      transition: all 0.3s ease-in-out;
     }
-    .tender h3 {
-      margin: 0;
-      color: #003366;
+    .card:hover {
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
     }
-    .tender p {
-      margin: 10px 0;
+    .card-header {
+      background-color: #003366;
+      color: white;
+      font-weight: bold;
     }
-    .tender small {
-      color: #666;
+    .badge-category {
+      font-size: 0.85rem;
+      background-color: #0d6efd;
+      color: white;
+    }
+    .btn-apply {
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Open Tender Opportunities</h1>
-    <p>Browse current opportunities and submit your expression of interest.</p>
-  </header>
+<div class="container">
+  <h2 class="text-primary text-center mb-5">📋 Licitaciones Activas – VendorConnect EG</h2>
 
-  <div class="container">
-    <div class="tender">
-      <h3>Provision of Immigration Services</h3>
-      <p>Support for visa processing, work permits, and expatriate compliance.</p>
-      <small>Deadline: June 15, 2025</small>
+  <!-- Licitación 1 -->
+  <div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      Suministro de Equipos de Seguridad Industrial
+      <span class="badge badge-category">Suministros</span>
     </div>
-    <div class="tender">
-      <h3>Supply of PPE for Offshore Workers</h3>
-      <p>Supply and delivery of certified personal protective equipment.</p>
-      <small>Deadline: June 30, 2025</small>
-    </div>
-    <div class="tender">
-      <h3>Transportation Logistics Support</h3>
-      <p>Fleet provision and logistics coordination for onshore operations.</p>
-      <small>Deadline: July 5, 2025</small>
+    <div class="card-body">
+      <p><strong>Operadora:</strong> Chevron EG</p>
+      <p><strong>Fecha límite:</strong> 10/06/2025</p>
+      <p><strong>Descripción:</strong> Se buscan empresas para proveer EPIs, uniformes ignífugos, botas dieléctricas y kits de emergencia certificados internacionalmente para empleados offshore.</p>
+      <a href="#" class="btn btn-outline-primary btn-apply">Ver Detalles / Postular</a>
     </div>
   </div>
 
+  <!-- Licitación 2 -->
+  <div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      Servicios de Consultoría en Medio Ambiente
+      <span class="badge badge-category">Consultoría</span>
+    </div>
+    <div class="card-body">
+      <p><strong>Operadora:</strong> Trident Energy</p>
+      <p><strong>Fecha límite:</strong> 25/06/2025</p>
+      <p><strong>Descripción:</strong> Se requiere consultora especializada en cumplimiento ambiental para realizar auditoría técnica de impacto y preparar documentación para presentación ante el MMH.</p>
+      <a href="#" class="btn btn-outline-primary btn-apply">Ver Detalles / Postular</a>
+    </div>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
