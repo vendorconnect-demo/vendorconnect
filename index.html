@@ -16,24 +16,15 @@
     .update-card img { border-top-left-radius: 12px; border-top-right-radius: 12px; object-fit: cover; height: 200px; width: 100%; }
     .update-card { box-shadow: 0 3px 10px rgba(0,0,0,0.08); border-radius: 12px; overflow: hidden; background: white; }
     .update-card-body { padding: 20px; }
-
+    .fade-up { opacity: 0; animation: fadeUp 1s ease-out forwards; }
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
-    .fade-up { opacity: 0; animation: fadeUp 1s ease-out forwards; }
     .fade-delay-1 { animation-delay: 0.3s; }
     .fade-delay-2 { animation-delay: 0.6s; }
     .fade-delay-3 { animation-delay: 0.9s; }
-
-    .perfil-btn {
-      border-radius: 50px;
-      font-weight: 500;
-      padding: 10px 25px;
-      min-width: 180px;
-    }
-
+    .perfil-btn { border-radius: 50px; font-weight: 500; padding: 10px 25px; min-width: 180px; }
     .hero {
       background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('images/bg-welcome.png') center center/cover no-repeat;
       color: white;
@@ -44,7 +35,6 @@
 </head>
 <body>
 
-<!-- Google Translate -->
 <div id="google_translate_element" style="position: absolute; top: 10px; right: 20px;"></div>
 <script type="text/javascript">
   function googleTranslateElementInit() {
@@ -53,7 +43,6 @@
 </script>
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
     <a class="navbar-brand fw-bold" href="index.html">VendorConnect EG</a>
@@ -70,28 +59,26 @@
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="container">
     <h1 class="fw-bold display-5 fade-up fade-delay-1">VendorConnect EG</h1>
-    <p class="lead fade-up fade-delay-2">
+    <p class="lead fade-up fade-delay-2 fs-5">
       El portal estratégico de la cadena de suministro del sector petróleo y gas en Guinea Ecuatorial.
     </p>
-    <p class="fade-up fade-delay-2">
+    <p class="fade-up fade-delay-2 fs-6">
       Impulsando la colaboración, el cumplimiento normativo, el acceso a oportunidades y el desarrollo de contenido local en un solo ecosistema digital.
     </p>
     <div class="fade-up fade-delay-3 mt-4">
-      <p class="mb-3">Selecciona tu perfil para continuar:</p>
+      <p class="mb-3 fw-semibold">¿Quién eres? Selecciona tu perfil para comenzar:</p>
       <div class="d-flex justify-content-center gap-3 flex-wrap">
-        <a href="login.html?perfil=proveedor" class="btn btn-outline-light perfil-btn">🧰 Proveedor</a>
-        <a href="login.html?perfil=operador" class="btn btn-outline-light perfil-btn">🏭 Operador</a>
+        <a href="login.html?perfil=proveedor" class="btn btn-outline-light perfil-btn">🧰 Soy Proveedor</a>
+        <a href="login.html?perfil=operador" class="btn btn-outline-light perfil-btn">🏭 Soy Operador</a>
         <a href="login-mmh.html" class="btn btn-warning perfil-btn text-dark">🛡️ Ministerio (MMH)</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FUNCIONALIDADES -->
 <section class="container text-center my-5">
   <h2 class="fw-bold mb-4">Funciones Principales</h2>
   <div class="row text-center g-4">
@@ -119,7 +106,39 @@
   </div>
 </section>
 
-<!-- FOOTER -->
+<section class="container my-5">
+  <h3 class="text-center mb-4">📰 Actualizaciones del Sector</h3>
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="update-card">
+        <img src="images/update1.png" alt="Noticia 1">
+        <div class="update-card-body">
+          <h5>Nuevo Marco Regulatorio</h5>
+          <p class="text-muted">El Ministerio publica nuevas directrices para el registro de proveedores internacionales...</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="update-card">
+        <img src="images/update2.png" alt="Noticia 2">
+        <div class="update-card-body">
+          <h5>Licitación Abierta 2025</h5>
+          <p class="text-muted">GEPetrol abre convocatoria para servicios logísticos offshore. Cierre: 15 de junio.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="update-card">
+        <img src="images/update3.png" alt="Noticia 3">
+        <div class="update-card-body">
+          <h5>Renovación Digital en SONAGAS</h5>
+          <p class="text-muted">Los proveedores aprobados podrán renovar su estatus directamente desde la plataforma.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer class="text-center">
   <div class="container">
     <p class="mb-1">VendorConnect EG &copy; 2025 – Todos los derechos reservados</p>
