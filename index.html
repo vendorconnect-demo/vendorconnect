@@ -14,6 +14,9 @@
     .icon-box i { font-size: 2rem; margin-bottom: 15px; color: #005d7a; }
     footer { background-color: #003366; color: white; padding: 30px 0; }
     .nav-link { color: white !important; font-weight: 500; }
+    .update-card img { border-top-left-radius: 12px; border-top-right-radius: 12px; object-fit: cover; height: 200px; width: 100%; }
+    .update-card { box-shadow: 0 3px 10px rgba(0,0,0,0.08); border-radius: 12px; overflow: hidden; background: white; }
+    .update-card-body { padding: 20px; }
 
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(30px); }
@@ -24,6 +27,7 @@
     .fade-delay-1 { animation-delay: 0.3s; }
     .fade-delay-2 { animation-delay: 0.6s; }
     .fade-delay-3 { animation-delay: 0.9s; }
+    .fade-delay-4 { animation-delay: 1.2s; }
 
     .perfil-btn {
       border-radius: 50px;
@@ -86,6 +90,68 @@
         <a href="register.html?perfil=proveedor" class="btn btn-outline-light perfil-btn">🧰 Supplier</a>
         <a href="register.html?perfil=operador" class="btn btn-outline-light perfil-btn">🏭 Operator</a>
         <a href="login-mmh.html" class="btn btn-warning perfil-btn text-dark">🛡️ Ministry (MMH)</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="container text-center my-5">
+  <h2 class="fw-bold mb-4">Platform Features</h2>
+  <div class="row text-center g-4">
+    <div class="col-md-4">
+      <div class="icon-box">
+        <i class="bi bi-card-checklist"></i>
+        <h5>Digital Licensing</h5>
+        <p>Request and manage your operating licenses in one place with institutional oversight.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="icon-box">
+        <i class="bi bi-megaphone"></i>
+        <h5>Tender Access</h5>
+        <p>View and apply to real opportunities in the energy sector from verified entities.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="icon-box">
+        <i class="bi bi-speedometer2"></i>
+        <h5>Regulatory Dashboard</h5>
+        <p>Real-time oversight by the Ministry of Mines and Hydrocarbons on local content compliance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UPDATES -->
+<section class="container my-5">
+  <h3 class="text-center mb-4">📰 Sector Updates</h3>
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="update-card">
+        <img src="images/update1.png" alt="News 1">
+        <div class="update-card-body">
+          <h5>New Regulatory Framework Released</h5>
+          <p class="text-muted">The Ministry has issued updated registration guidelines for international suppliers...</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="update-card">
+        <img src="images/update2.png" alt="News 2">
+        <div class="update-card-body">
+          <h5>GEPetrol Opens 2025 Tender Round</h5>
+          <p class="text-muted">Call for logistics and marine service providers open until June 15th.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="update-card">
+        <img src="images/update3.png" alt="News 3">
+        <div class="update-card-body">
+          <h5>SONAGAS Extends Framework Contracts</h5>
+          <p class="text-muted">Registered vendors now eligible for digital renewal through VendorConnect EG.</p>
+        </div>
       </div>
     </div>
   </div>
