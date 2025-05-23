@@ -2,67 +2,59 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Panel del Operador – VendorConnect EG</title>
+  <title>Panel de Operadora | VendorConnect EG</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
   <style>
     body { background-color: #f4f6f9; font-family: 'Segoe UI', sans-serif; }
-    .container { padding-top: 40px; max-width: 1200px; }
-    .card { border-radius: 15px; padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); margin-bottom: 20px; }
-    .section-header { margin-top: 40px; margin-bottom: 20px; }
-    .btn-wide { width: 100%; }
+    .container { padding: 40px 20px; max-width: 1300px; }
+    .card { border-radius: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); padding: 20px; margin-bottom: 20px; }
+    .section-title { margin: 40px 0 20px; font-weight: bold; color: #003366; }
+    .btn-wide { width: 100%; margin-top: 10px; }
   </style>
 </head>
 <body>
 
 <div class="container">
-  <h2 class="text-center mb-4">📡 Panel del Operador – VendorConnect EG</h2>
-
-  <!-- ALERTA -->
-  <div class="alert alert-warning text-center mt-2" role="alert">
-    ⚠️ Tu cuenta está pendiente de activación. 
-    <a href="pago.html?perfil=operador" class="btn btn-sm btn-warning ms-2">Proceder al Pago</a>
-  </div>
+  <h2 class="text-primary text-center mb-4">Panel de Gestión – Operadora Petrolera</h2>
 
   <!-- KPIs -->
-  <div class="row text-center mb-4">
-    <div class="col-md-3">
-      <div class="card">
-        <div>Licitaciones Publicadas</div>
-        <h3 class="text-primary">24</h3>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="card">
-        <div>Proveedores Participantes</div>
-        <h3 class="text-success">162</h3>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="card">
-        <div>Contenido Local</div>
-        <h3 class="text-warning">58%</h3>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="card">
-        <div>Reportes Enviados al MMH</div>
-        <h3 class="text-danger">4</h3>
-      </div>
-    </div>
+  <div class="row text-center mb-5">
+    <div class="col-md-3"><div class="card">Licitaciones Publicadas<h3 class="text-primary">12</h3></div></div>
+    <div class="col-md-3"><div class="card">Proveedores Participantes<h3 class="text-success">87</h3></div></div>
+    <div class="col-md-3"><div class="card">Contenido Local Promedio<h3 class="text-warning">54%</h3></div></div>
+    <div class="col-md-3"><div class="card">Reportes al MMH<h3 class="text-danger">3</h3></div></div>
+  </div>
+
+  <!-- Gestión de Licitaciones -->
+  <h4 class="section-title"><i class="bi bi-file-earmark-text me-2"></i>Gestión de Licitaciones</h4>
+  <div class="row">
+    <div class="col-md-4"><div class="card text-center">Publicar Nueva Licitación<a href="#" class="btn btn-outline-primary btn-wide">Crear</a></div></div>
+    <div class="col-md-4"><div class="card text-center">Ver Postulaciones Recibidas<a href="#" class="btn btn-outline-info btn-wide">Ver</a></div></div>
+    <div class="col-md-4"><div class="card text-center">Historial de Licitaciones<a href="#" class="btn btn-outline-secondary btn-wide">Consultar</a></div></div>
   </div>
 
   <!-- Directorio de Proveedores -->
-  <div class="section-header">
-    <h4><i class="bi bi-folder2-open me-2"></i>Directorio de Proveedores</h4>
-  </div>
+  <h4 class="section-title"><i class="bi bi-folder2-open me-2"></i>Directorio de Proveedores</h4>
   <div class="card text-center">
-    <p>Consulta la base de proveedores validados para el sector hidrocarburos.</p>
-    <a href="proveedores-operadora.html" class="btn btn-outline-primary btn-wide">
-      <i class="bi bi-search me-1"></i> Acceder al Directorio
-    </a>
+    <p>Consulta proveedores activos, filtra por sector o licencia, y accede a sus perfiles completos.</p>
+    <a href="proveedores-operadora.html" class="btn btn-outline-primary btn-wide"><i class="bi bi-search me-1"></i> Ver Directorio</a>
+  </div>
+
+  <!-- Cumplimiento y Reportes -->
+  <h4 class="section-title"><i class="bi bi-check-circle me-2"></i>Cumplimiento y Reportes</h4>
+  <div class="row">
+    <div class="col-md-6"><div class="card text-center">Contenido Local por Licitación<a href="#" class="btn btn-outline-success btn-wide">Revisar Cumplimiento</a></div></div>
+    <div class="col-md-6"><div class="card text-center">Subir Reporte Trimestral<a href="#" class="btn btn-outline-dark btn-wide">Cargar Archivo</a></div></div>
+  </div>
+
+  <!-- Notificaciones y Configuración -->
+  <h4 class="section-title"><i class="bi bi-gear-fill me-2"></i>Notificaciones y Configuración</h4>
+  <div class="row">
+    <div class="col-md-6"><div class="card text-center">Mensajes del MMH / Sistema<a href="#" class="btn btn-outline-warning btn-wide">Ver Bandeja</a></div></div>
+    <div class="col-md-6"><div class="card text-center">Configuración de Cuenta<a href="#" class="btn btn-outline-secondary btn-wide">Editar Perfil</a></div></div>
   </div>
 </div>
 
