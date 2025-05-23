@@ -14,7 +14,7 @@
     }
     .container {
       padding: 40px 20px;
-      max-width: 1200px;
+      max-width: 1300px;
     }
     .card {
       border-radius: 12px;
@@ -25,6 +25,10 @@
       width: 100%;
       margin-top: 10px;
     }
+    .section-header {
+      margin-top: 50px;
+      margin-bottom: 20px;
+    }
   </style>
 </head>
 <body>
@@ -32,7 +36,7 @@
 <div class="container">
   <h2 class="text-primary text-center mb-4">Panel Institucional – Ministerio de Minas e Hidrocarburos</h2>
 
-  <!-- Indicadores -->
+  <!-- KPIs -->
   <div class="row text-center mb-4">
     <div class="col-md-3">
       <div class="card">
@@ -42,36 +46,80 @@
     </div>
     <div class="col-md-3">
       <div class="card">
-        <div>Operadoras Activas</div>
-        <h3 class="text-success">6</h3>
+        <div>Licencias Activas</div>
+        <h3 class="text-success">198</h3>
       </div>
     </div>
     <div class="col-md-3">
       <div class="card">
-        <div>Licencias Emitidas</div>
-        <h3 class="text-warning">198</h3>
+        <div>Licitaciones con participación nacional</div>
+        <h3 class="text-warning">78%</h3>
       </div>
     </div>
     <div class="col-md-3">
       <div class="card">
-        <div>% Contenido Local</div>
+        <div>% Contenido Local Promedio</div>
         <h3 class="text-danger">63%</h3>
       </div>
     </div>
   </div>
 
-  <!-- Acciones -->
+  <!-- Acciones principales -->
   <div class="row">
+    <div class="col-md-4">
+      <div class="card text-center">
+        <h5><i class="bi bi-journal-check me-2"></i>Gestión de Licencias</h5>
+        <a href="license-management.html" class="btn btn-outline-info btn-wide">Ver / Aprobar / Rechazar</a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center">
+        <h5><i class="bi bi-bullhorn-fill me-2"></i>Publicar Noticias / Alertas</h5>
+        <a href="#" class="btn btn-outline-warning btn-wide">Crear Actualización</a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center">
+        <h5><i class="bi bi-bar-chart-line-fill me-2"></i>Panel de Contenido Local</h5>
+        <a href="#" class="btn btn-outline-primary btn-wide">Ver Indicadores</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección secundaria -->
+  <div class="section-header">
+    <h4><i class="bi bi-person-lines-fill me-2"></i>Gestión de Usuarios Internos</h4>
+  </div>
+  <div class="row mb-4">
     <div class="col-md-6">
       <div class="card text-center">
-        <h5><i class="bi bi-journal-check me-2"></i>Gestionar Licencias</h5>
-        <a href="license-management.html" class="btn btn-outline-info btn-wide">Ver y Aprobar Solicitudes</a>
+        <h6>Administrar cuentas de usuarios MMH</h6>
+        <a href="#" class="btn btn-outline-dark btn-wide">Ver / Crear / Editar Usuarios</a>
       </div>
     </div>
     <div class="col-md-6">
       <div class="card text-center">
-        <h5><i class="bi bi-bar-chart-line-fill me-2"></i>Ver Indicadores de Contenido Local</h5>
-        <a href="#" class="btn btn-outline-primary btn-wide">Panel de Indicadores</a>
+        <h6>Ver registros de actividad institucional</h6>
+        <a href="#" class="btn btn-outline-secondary btn-wide">Logs de Auditoría</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección de Monitoreo -->
+  <div class="section-header">
+    <h4><i class="bi bi-clipboard-data me-2"></i>Monitoreo de Operadoras</h4>
+  </div>
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <div class="card text-center">
+        <h6>Ver cumplimiento de contenido local por operadora</h6>
+        <a href="#" class="btn btn-outline-success btn-wide">Revisar Reportes</a>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card text-center">
+        <h6>Descargar informes y estadísticas globales</h6>
+        <a href="#" class="btn btn-outline-primary btn-wide">Exportar Datos</a>
       </div>
     </div>
   </div>
